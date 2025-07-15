@@ -1,0 +1,174 @@
+---
+layout: categories
+seo:
+ title: Shop
+ description: Everything a content creator needs to grow their career in this epic industry!
+ keywords: content creator, influencer, shop, content creator shops
+ social-alt: Everything a content creator needs to grow their career in this epic industry!
+ url: https://kingcode.uk/ultimate-shop-for-content-creators/shop-categories/shop
+ social-share_image: /images/products/hotel-collab-guide.jpg
+heading: Shop All
+category-1: 
+  heading: all
+  link: /shop-categories/shop
+category-2: 
+  heading: favorites
+  link: /shop-categories/favorites
+category-3: 
+  heading: ebooks
+  link: /shop-categories/ebooks
+category-symbol: •
+colors:
+ heading-color: '#9E9282'
+ product-title-color: '#9E9282'
+ product-price-color: 'white'
+ discounted-price-color: '#9b4851'
+ product-description-color: '#9E9282'
+ rating-color: '#859f9f'
+ cta-color: 'white'
+ shop-background-color: '#F8F7F3' 
+ product-hover-overlay-color: '#859f9f5c' 
+ border-color: 'white'
+ product-description-background-color: 'white'
+ price-background-color: '#9b4851'
+ discounted-price-background-color: 'transparent'
+ button-color: '#9E9282'
+ button-text-color: 'white'
+ button-hover-color: '#366e94'
+ button-text-hover-color: 'white'
+ discounted-price-background-color: 'transparent'
+ category-bar-color: '#9E9282'
+ category-text-color: '#9E9282'
+ category-text-hover-color: '#366e94'
+ category-dot-color: '#9E9282'
+fonts:
+ heading-font: Mak
+ product-title-font: Mak
+ product-description-font: Raleway, sans-serif
+ cta-font: Raleway, sans-serif
+ button-font: Mak
+ cta-font: brushwell
+ category-font: brushwell
+border-radius:
+  top-left: 100%
+  top-right: 100%
+  bottom-left: 100%
+  bottom-right: 100%
+---
+
+<style>
+
+  #content-blocks-{{forloop.index0}} h2 
+    {
+    color: {{page.colors.heading-color}};
+    font-family: {{page.fonts.heading-font}};
+    }
+
+  #content-blocks-{{forloop.index0}} .shop-background-color 
+    {background-color: {{page.colors.shop-background-color}};}
+
+  #content-blocks-{{forloop.index0}}  .blog-hover-overlay:hover 
+    {
+    background-color: {{page.colors.product-hover-overlay-color}};
+    color: {{page.colors.cta-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .shop-bump
+    {
+    border-top: 4px solid {{page.colors.border-color}};
+    border-left: 4px solid {{page.colors.border-color}};
+    background-color: {{page.colors.product-description-background-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .button-bump
+    {
+    border-left: 4px solid {{page.colors.border-color}};
+    background-color: {{page.colors.product-description-background-color}};
+    }
+  
+  #content-blocks-{{forloop.index0}} .all-products h3
+    {
+    font-family: {{page.fonts.product-title-font}};
+    color: {{page.colors.product-title-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .all-products h5
+    {
+    font-family: {{page.fonts.cta-font}};
+    }
+
+
+  #content-blocks-{{forloop.index0}} .all-products p
+  {
+  font-family: {{page.fonts.product-description-font}};
+  color: {{page.colors.product-description-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .stars p
+  {
+  color: {{page.colors.rating-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .stars a {text-align: centerS;}
+
+  #content-blocks-{{forloop.index0}} .product-price
+    {
+    background-color: {{page.colors.price-background-color}};
+    color: {{page.colors.product-price-color}}
+    }
+
+  #content-blocks-{{forloop.index0}} .compare-at-price
+   {
+   background-color: {{page.colors.discounted-price-background-color}};
+   color: {{page.colors.discounted-price-color}};
+   } 
+
+   #content-blocks-{{forloop.index0}} .button
+   {
+   background-color: {{page.colors.button-color}};
+   color: {{page.colors.button-text-color}};
+   font-family: {{page.fonts.button-font}};
+   border-top-left-radius: {{page.border-radius.top-left}};
+   border-top-right-radius: {{page.border-radius.top-left}};
+   border-bottom-left-radius: {{page.border-radius.top-left}};
+   border-bottom-right-radius: {{page.border-radius.top-left}};
+   padding: 10px 30px;
+   border: solid 2px {{page.colors.button-text-color}};
+   }
+
+   #content-blocks-{{forloop.index0}} .button:hover
+   {
+   background-color: {{page.colors.button-hover-color}};
+   color: {{page.colors.button-text-hover-color}};
+</style>
+
+
+<section id="content-blocks-{{forloop.index0}}">
+    <section class="shop-background-color padded-sides grid-left all-products">
+        {% assign ebook_products = site.products | where: 'ebook_products', true %}
+        {% for shop in ebook_products %}
+        <div class="padded-1 col-4_sm-6_xs-12">
+          <a class="padded" href="{{shop.url}}">
+            <div class="hover-container" style="background-image:url('{{shop.shop-hero.product-image}}')">
+              <div class="blog-hover-overlay">
+                <div class="hover-inner center">
+                  <h5 class=""> {{shop.shop-hero.cta}} </h5>
+                </div>
+              </div>
+            </div>
+            <div class="shop-bump left grid">
+              <h3 class="col-12">{{shop.shop-hero.product-name}}</h3>
+              <p class="col-12"><span class="product-price"> {{shop.shop-hero.price}}</span> <span class="compare-at-price">{{shop.shop-hero.discounted-price}} </span></p>
+              <p class="col-12">{{shop.shop-hero.product-description-summery}}</p>
+              <div class="stars col-12">
+                <p>{{shop.shop-hero.product-rating}}</p>
+              </div>                     
+            </div>
+          </a>
+          <div class= "center button-bump">
+            <a href="{{shop.url}}" class="button center">{{shop.shop-hero.cta}}</a></div>
+        </div> 
+        {% endfor %}
+        </section>
+   </section> 
+</section>

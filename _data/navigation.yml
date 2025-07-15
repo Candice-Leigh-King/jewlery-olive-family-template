@@ -1,0 +1,67 @@
+first-block:
+  image: /images/products/hotel-collabs/on-sale3.jpg
+  textarea_html: <p><a href="/shop-categories/shop">shop</a></p>
+  border-radius:
+    border-top-left-corner: 100%
+    border-top-right-corner: 100%
+    border-bottom-left-corner: 100%
+    border-bottom-right-corner: 100%
+  border-color: '#0a0a09'
+second-block:
+  image: /images/food-photography/camrea.png 
+  textarea_html: >-
+    <p><a href="/portfolio">portfolio</a></p>
+    <p><a href="/influencer-marketing">media kit</a></p>
+  border-radius:
+    border-top-left-corner: 0%
+    border-top-right-corner: 0%
+    border-bottom-left-corner: 0%
+    border-bottom-right-corner: 0%
+  border-color: '#0a0a09'
+third-block:
+  image: /images/services.webp
+  textarea_html: >-
+    <p><a href="/#services">services</a></p>
+    <p><a href="/#about">about us</a></p>
+  border-radius:
+    border-top-left-corner: 100%
+    border-top-right-corner: 100%
+    border-bottom-left-corner: 0%
+    border-bottom-right-corner: 0%
+  border-color: '#0a0a09'
+fourth-block:
+  image: /images/contact-the-kings.webp
+  textarea_html: <p><a href="/contact">contact us</a></p>
+  border-radius:
+    border-top-left-corner: 0%
+    border-top-right-corner: 0%
+    border-bottom-left-corner: 0%
+    border-bottom-right-corner: 0%
+  border-color: '#0a0a09'
+colors:
+  hamburger-color: '#ffffff'
+  background-color: '#0a0a09'
+  textarea-background-color: '#f8f6f4'
+  border-color: '#0a0a09'
+  link-color: '#0a0a09'
+  link-background-hover-color: 'white'
+  hover-link-color: 'black'
+  exit-color: '#f8f6f4'
+  exit-hover-color: 'grey'
+border-radius:
+  top-left-corner: 0%
+  top-right-corner: 0%
+  bottom-left-corner: 0%
+  bottom-right-corner: 0%
+fonts:
+  link-font: Mak
+social-link-colors:
+  icon-color: '#366e94'
+  icon-hover-color: '#9e9282'
+icons-border-radius:
+  top-left-corner: 100px
+  top-right-corner: 0px
+  bottom-left-corner: 0px
+  bottom-right-corner: 100px
+
+  # /images/about-the-kings.webp

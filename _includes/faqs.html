@@ -1,0 +1,184 @@
+
+<style>
+
+#content-blocks-{{forloop.index0}} h1 
+  {
+  color: {{item.colors.heading-color}};
+  font-family: {{item.fonts.heading-font}};
+  }
+
+#content-blocks-{{forloop.index0}} h2 
+  {
+  color: {{item.colors.heading-color}};
+  font-family: {{item.fonts.heading-font}};
+  }
+
+#content-blocks-{{forloop.index0}} h3 
+  {
+  color: {{item.colors.heading-color}};
+  font-family: {{item.fonts.heading-font}};
+  }
+
+#content-blocks-{{forloop.index0}} h4
+  {
+  font-size: 1.8rem;
+  padding: 10px;
+  color: {{item.colors.subheading-color}};
+  font-family: {{item.fonts.subheading-font}};
+  }
+
+#content-blocks-{{forloop.index0}} h5
+  {
+  color: {{item.colors.subheading-color}};
+  font-family: {{item.fonts.subheading-font}};
+  }
+
+  #content-blocks-{{forloop.index0}} h6
+  {
+  color: {{item.colors.subheading-color}};
+  font-family: {{item.fonts.subheading-font}};
+  }
+
+  #content-blocks-{{forloop.index0}} .background-color {background-color: {{item.colors.background-color}};}
+
+  #content-blocks-{{forloop.index0}} .faq-background-color {background-color: {{item.colors.faq-background-color}};}
+
+
+/* Accordian slides */
+#content-blocks-{{forloop.index0}} .panel1, .panel2, .panel3, .panel4, .panel5, .panel6, .panel7, .panel8 {display: none;}
+
+
+#content-blocks-{{forloop.index0}} .panel1, .panel2, .panel3, .panel4, .panel5, .panel6, .panel7, .panel8 p 
+  {
+  padding: 0% 1%;
+  font-size: 0.8rem;
+  }
+
+#content-blocks-{{forloop.index0}} .accordion
+  {
+  border: solid 2px #F6F6E9;
+  margin: 1%;
+  }
+
+#content-blocks-{{forloop.index0}} .accordion p 
+ {
+ margin: 0% 1% 1% 1%;
+ padding: 1%;
+ border-left: 2px solid {{item.colors.text-color}};
+ color: {{item.colors.text-color}};
+ font-size: 1rem;
+ }
+
+ #content-blocks-{{forloop.index0}} a:hover {color:{{item.colors.link-hover-color}};}
+
+#content-blocks-{{forloop.index0}} .accordion:hover
+  {
+   border: solid 2px {{item.colors.border-hover-color}};
+   color: {{item.colors.text-hover-color}};
+   cursor: pointer;
+   background-color: {{item.colors.hover-color}};
+  }
+
+
+#content-blocks-{{forloop.index0}} .accordion1, .accordion2, .accordion3, .accordion4, .accordion5, .accordion6, .accordion7, .accordion8 p {color: black;}
+
+
+.plus h4::before 
+ {
+  content: "＋";
+  font-size: 1.2rem;
+ }
+
+.active h4::before 
+ {
+  content: "－";
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  font-size: 1.2rem;
+  transition: all 0.5s ease-in;
+ }
+
+</style>
+
+<section id="content-blocks-{{forloop.index0}}" class="  ">
+  <section class="background-color grid-center  padded-sides ">
+    <section id="{{content-block-link}}" class="padded-sides  col-9_xs-12">
+
+    <h2 class="center padded-1"> {{item.heading}} </h2>
+
+    <!-- dl stands for description list, with a description title and a description description -->
+    <dl class=" faq-background-color padded-1 plus">
+      <div class="accordion1">
+        <div class="accordion ">
+         <h4 class="">{{item.question-1.heading}} </h4>
+        <div class="panel1">{{item.question-1.textarea_html}}</div>
+        </div>
+      </div>
+
+    <div class="accordion2">
+      <div class="accordion">
+        <h4 class=""> {{item.question-2.heading}}</h4>
+      <div class="panel2">
+        {{item.question-2.textarea_html}}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion3">
+      <div class="accordion">
+        <h4 class=""> {{item.question-3.heading}}</h4>
+      <div class="panel3">
+        {{item.question-3.textarea_html}}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion4">
+      <div class="accordion">
+         <h4 class=""> {{item.question-4.heading}}</h4>
+      <div class="panel4">
+        {{item.question-4.textarea_html}}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion5">
+      <div class="accordion">
+       <h4 class=""> {{item.question-5.heading}}</h4>
+      <div class="panel5">
+        {{item.question-5.textarea_html}}
+        </div>
+      </div>
+    </div>
+
+     <div class="accordion6">
+      <div class="accordion">
+        <h4 class=""> {{item.question-6.heading}}</h4>
+      <div class="panel6">
+        {{item.question-6.textarea_html}}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion7">
+      <div class="accordion">
+        <h4> {{item.question-7.heading}}</h4>
+      <div class="panel7">
+        {{item.question-7.textarea_html}}
+        </div>
+      </div>
+    </div> 
+
+    <div class="accordion8">
+      <div class="accordion">
+        <h4> {{item.question-8.heading}}</h4>
+      <div class="panel8">
+        {{item.question-8.textarea_html}}
+        </div>
+      </div>
+    </div> 
+    </section>
+
+  </section>
+ </section> 

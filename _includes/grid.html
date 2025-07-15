@@ -1,0 +1,371 @@
+<style>
+
+    #content-blocks-{{forloop.index0}} .tablet-show {margin-top: 1rem !important;}
+    #content-blocks-{{forloop.index0}} .trip-images{
+        padding: 2% 7%;
+    }
+
+    #content-blocks-{{forloop.index0}} .background-color {background-color: #F8F7F3;}
+
+    #content-blocks-{{forloop.index0}} .highlight{
+        background-color: #F2F1EF;
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+
+    }
+
+    #content-blocks-{{forloop.index0}} .trip-name{
+        margin-bottom: -1rem;
+        width: 130%;
+        
+    }
+
+    #content-blocks-{{forloop.index0}} .upcoming-trip{
+        margin-top: -25% !important;
+    }
+    #content-blocks-{{forloop.index0}} .upcoming-trip h1{
+        font-size: 5rem;
+    }
+
+    
+
+    #content-blocks-{{forloop.index0}} #circle{
+        margin-top: -38%;
+        rotate: -40deg;
+        margin-left: 25%;
+    }
+
+    #content-blocks-{{forloop.index0}} #circle textPath{
+
+        font-family: Milky Walky;
+    }
+
+    #content-blocks-{{forloop.index0}} #circle svg{
+        height: 900px;
+        width: 1000px 
+    }
+
+    #content-blocks-{{forloop.index0}} #circle svg textPath{
+        font-size: 20px;
+    }
+
+    #content-blocks-{{forloop.index0}} .background-image{
+        background-image: url('{{item.section-background_image}}');
+    }
+
+    #content-blocks-{{forloop.index0}} .background-image-1{
+        background-image: url('{{item.1-background_image}}');
+        border: 2.5px solid #1C321B;
+    }
+    #content-blocks-{{forloop.index0}} .background-image-2{
+        background-image: url('{{item.2-background_image}}');
+        transition: 0.7s all;
+        padding-top: 16rem;
+    }
+    #content-blocks-{{forloop.index0}} .background-image-3{
+        background-image: url('{{item.3-background_image}}');
+        transition: 0.7s all;
+        padding-bottom: 16rem;
+    }
+    
+    #content-blocks-{{forloop.index0}} .background-image-2:hover{
+        transform: scale(1.1);
+    }
+    #content-blocks-{{forloop.index0}} .background-image-3:hover{
+        transform: scale(1.1);
+    }
+
+    .trip a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the links are clickable */
+    }
+
+    #content-blocks-{{forloop.index0}} .FAQ {
+        font-size: 3.5rem;
+        font-family: Mak;
+    color: #9E9282;
+    }
+    #content-blocks-{{forloop.index0}} .the-grid div{
+        border: 1px solid #1C321B;
+    }
+    #content-blocks-{{forloop.index0}} .the-grid h5{
+        font-size: 3rem;
+        font-family: Brushwell;
+        color: #9E9282;
+    }
+
+    #content-blocks-{{forloop.index0}} .the-grid h6{
+        font-size: 2rem;
+    }
+    #content-blocks-{{forloop.index0}} .the-grid p{
+        font-size: 1.1rem;
+    }
+
+
+    #content-blocks-{{forloop.index0}} .accordion {
+    position: relative;
+    z-index: 5;
+    }
+
+    #content-blocks-{{forloop.index0}} .accordion-header {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    }
+
+    #content-blocks-{{forloop.index0}} .accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    }
+
+
+
+    /* ------------------------------------------------------------------// ------------------------------------------------------------------Mobile Settings ------------------------------------------------------------------// ------------------------------------------------------------------*/
+
+@media(min-width:1920px){
+
+
+}
+
+@media(max-width: 1105px){
+
+    #content-blocks-{{forloop.index0}} .upcoming-trip{
+        margin-top: -25% !important;
+    }
+
+    #content-blocks-{{forloop.index0}} .highlight{
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+
+    }
+
+    #content-blocks-{{forloop.index0}} #circle svg{
+        
+    height: 716px;
+    width: 736px;
+
+    }
+
+    #content-blocks-{{forloop.index0}} #circle{
+        margin-top: -28%;
+        rotate: -40deg;
+        margin-left: 48%;
+    }
+
+    #content-blocks-{{forloop.index0}} .upcoming-trip h1{
+        font-size: 4rem;
+    }
+}
+
+@media(max-width: 850px){
+
+    
+
+    #content-blocks-{{forloop.index0}} .the-grid h6{
+        font-size: 1.5rem;
+    }
+
+    #content-blocks-{{forloop.index0}} #circle svg{
+        
+        height: 550px;
+        width: 550px;
+    
+        }
+
+        #content-blocks-{{forloop.index0}} .upcoming-trip h1{
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    #content-blocks-{{forloop.index0}} .highlight{
+        font-size: 1.2rem;
+    }
+
+}
+
+@media(max-width: 750px){
+
+    #content-blocks-{{forloop.index0}} .the-grid h5{
+        font-size: 3.5rem;
+    }
+
+    #content-blocks-{{forloop.index0}} #circle{
+        margin-top: -33%;
+        rotate: -40deg;
+        margin-left: 42%;
+    }
+
+    #content-blocks-{{forloop.index0}} #circle svg{
+        
+        height: 450px;
+        width: 450px;
+    
+        }
+
+        #content-blocks-{{forloop.index0}} .upcoming-trip{
+        margin-top: -17% !important;
+    }
+
+    #content-blocks-{{forloop.index0}} .FAQ {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media(max-width:650px){
+
+    #content-blocks-{{forloop.index0}} #circle svg{
+        
+        height: 350px;
+        width: 350px;
+    
+        }
+
+        #content-blocks-{{forloop.index0}} .accordion-header{
+            font-size: 1.2rem;
+        }
+
+        #content-blocks-{{forloop.index0}} .upcoming-trip{
+        margin-top: -7% !important;
+    }
+
+}
+/* Small Screen - Mobile */
+@media(max-width:550px){
+
+    #content-blocks-{{forloop.index0}} .background-image-2{
+        background-image: url('{{item.2-background_image}}');
+        transition: 0.7s all;
+        padding-top: 9rem;
+    }
+    #content-blocks-{{forloop.index0}} .background-image-3{
+        background-image: url('{{item.3-background_image}}');
+        transition: 0.7s all;
+        padding-bottom: 9rem;
+    }
+
+    #content-blocks-{{forloop.index0}} .trip-images{
+        padding: 2% 2%;
+    }
+
+
+    #content-blocks-{{forloop.index0}} #circle{
+        margin-top: -41%;
+        rotate: -40deg;
+        margin-left: -36%;
+        margin-bottom: -32%;
+    }
+
+    #content-blocks-{{forloop.index0}} .upcoming-trip h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #content-blocks-{{forloop.index0}} .upcoming-trip{
+        margin-top: 0% !important;
+    }
+
+}
+
+@media(max-width: 450px){
+
+    #content-blocks-{{forloop.index0}} #circle{
+        margin-top: -44%;
+        rotate: -26deg;
+        margin-left: -34%;
+        margin-bottom: -46%;
+    }
+
+    #content-blocks-{{forloop.index0}} #circle svg{
+        
+        height: 300px;
+        width: 300px;
+    
+    }
+
+    #content-blocks-{{forloop.index0}} .trip-name {
+    width: 130%;
+    }
+
+
+}
+
+
+@media(max-width: 400px){
+
+#content-blocks-{{forloop.index0}} #circle{
+    margin-top: -44%;
+    rotate: -26deg;
+    margin-left: -30%;
+    margin-bottom: -46%;
+}
+
+#content-blocks-{{forloop.index0}} #circle svg{
+    
+    height: 200px;
+    width: 200px;
+
+    }
+
+
+
+}
+</style>
+
+<section id="content-blocks-{{forloop.index0}}">
+    <section class = "bg-image background-color background-image" id="{{item.content-block-link}}"> 
+        <!-- Upcoming trips and FAQ -->
+  
+        <section class = "grid-center padded-b-2 padded-t-2 blend-bg" id="{{item.grid-link}}">
+            <div class="col-12"><h4 class = "padded-xs right FAQ">{{item.heading}}</h5></div>
+        
+            <div class = "col-9-center_sm-11 center">
+        
+            <div class = "grid-center the-grid">
+                <div class = "col-4_sm-6_xs-12-center padded-xs "> 
+                    <h5>{{item.grid-1.heading}}</h5>
+                    <h6>{{item.grid-1.sub-heading}}</h6>
+                    <p class = "left">{{item.grid-1.textarea_html}}</p>
+                </div>
+                <div class = "col-4_sm-6_xs-12-center center padded-xs "> 
+                    <h5>{{item.grid-2.heading}}</h5>
+                    <h6>{{item.grid-2.sub-heading}}</h6>
+                    <p class = "left">{{item.grid-2.textarea_html}}</p>
+                </div>
+                <div class = "col-4_sm-6_xs-12-center center padded-xs "> 
+                    <h5>{{item.grid-3.heading}}</h5>
+                    <h6>{{item.grid-3.sub-heading}}</h6>
+                    <p class = "left">{{item.grid-3.textarea_html}}</p>
+                </div>
+                <div class = "col-4_sm-6_xs-12-center center padded-xs "> 
+                    <h5>{{item.grid-4.heading}}</h5>
+                    <h6>{{item.grid-4.sub-heading}}</h6>
+                    <p class = "left">{{item.grid-4.textarea_html}}</p>
+                </div>
+                <div class = "col-4_sm-6_xs-12-center center padded-xs "> 
+                    <h5>{{item.grid-5.heading}}</h5>
+                    <h6>{{item.grid-5.sub-heading}}</h6>
+                    <p class = "left">{{item.grid-5.textarea_html}}</p>
+                </div>
+                <div class = "col-4_sm-6_xs-12-center center padded-xs "> 
+                    <h5>{{item.grid-6.heading}}</h5>
+                    <h6>{{item.grid-6.sub-heading}}</h6>
+                    <p class = "left">{{item.grid-6.textarea_html}}</p>
+                </div>
+            </div>
+            </div>
+        
+        
+        </section>
+        
+
+    </section>
+
+</section>

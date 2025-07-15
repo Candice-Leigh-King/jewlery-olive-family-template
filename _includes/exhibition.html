@@ -1,0 +1,211 @@
+<style>
+    #content-blocks-{{forloop.index0}} .background-color
+    {background-color: {{item.colors.background-color}};}
+
+    #content-blocks-{{forloop.index0}} .mixed-gallery .exibition-gallery 
+    {border: 3px solid {{item.colors.background-color}};}
+
+    #content-blocks-{{forloop.index0}} .textarea 
+
+    {background-color: {{item.colors.textarea-background-color}};}
+
+    #content-blocks-{{forloop.index0}} .cta-button 
+    {
+    margin-top: -20rem !important;
+    z-index: 1;  
+    background-color: {{item.colors.button-color}};
+    color: {{item.colors.button-text-color}};
+    font-family: {{item.fonts.button-font}};
+    font-weight: bolder;
+    font-size: 1.7rem;
+    padding: .8rem 2rem .6rem;
+    border: solid 2px {{item.colors.button-text-color}};
+    border-top-left-radius: {{item.button-border-radius.border-top-left-corner}};
+    border-top-right-radius: {{item.button-border-radius.border-top-right-corner}};
+    border-bottom-left-radius: {{item.button-border-radius.border-bottom-left-corner}};
+    border-bottom-right-radius: {{item.button-border-radius.border-bottom-right-corner}};  
+    }
+
+    #content-blocks-{{forloop.index0}} .border-1 
+    { 
+    border-top-left-radius: {{item.image-1.border-radius.border-top-left-corner}};
+    border-top-right-radius: {{item.image-1.border-radius.border-top-right-corner}};
+    border-bottom-left-radius: {{item.image-1.border-radius.border-bottom-left-corner}};
+    border-bottom-right-radius: {{item.image-1.border-radius.border-bottom-right-corner}}; 
+    }
+
+    #content-blocks-{{forloop.index0}} .border-2 
+    { 
+    border-top-left-radius: {{item.image-2.border-radius.border-top-left-corner}};
+    border-top-right-radius: {{item.image-2.border-radius.border-top-right-corner}};
+    border-bottom-left-radius: {{item.image-2.border-radius.border-bottom-left-corner}};
+    border-bottom-right-radius: {{item.image-2.border-radius.border-bottom-right-corner}}; 
+    }
+
+    #content-blocks-{{forloop.index0}} .border-3 
+    { 
+    border-top-left-radius: {{item.image-3.border-radius.border-top-left-corner}};
+    border-top-right-radius: {{item.image-3.border-radius.border-top-right-corner}};
+    border-bottom-left-radius: {{item.image-3.border-radius.border-bottom-left-corner}};
+    border-bottom-right-radius: {{item.image-3.border-radius.border-bottom-right-corner}}; 
+    }
+
+    #content-blocks-{{forloop.index0}} .border-4 
+    { 
+    border-top-left-radius: {{item.image-4.border-radius.border-top-left-corner}};
+    border-top-right-radius: {{item.image-4.border-radius.border-top-right-corner}};
+    border-bottom-left-radius: {{item.image-4.border-radius.border-bottom-left-corner}};
+    border-bottom-right-radius: {{item.image-4.border-radius.border-bottom-right-corner}}; 
+    }
+
+    #content-blocks-{{forloop.index0}} .border-5 
+    { 
+    border-top-left-radius: {{item.image-5.border-radius.border-top-left-corner}};
+    border-top-right-radius: {{item.image-5.border-radius.border-top-right-corner}};
+    border-bottom-left-radius: {{item.image-5.border-radius.border-bottom-left-corner}};
+    border-bottom-right-radius: {{item.image-5.border-radius.border-bottom-right-corner}}; 
+    }
+
+    #content-blocks-{{forloop.index0}} .border-6 
+    { 
+    border-top-left-radius: {{item.image-6.border-radius.border-top-left-corner}};
+    border-top-right-radius: {{item.image-6.border-radius.border-top-right-corner}};
+    border-bottom-left-radius: {{item.image-6.border-radius.border-bottom-left-corner}};
+    border-bottom-right-radius: {{item.image-6.border-radius.border-bottom-right-corner}}; 
+    }
+
+    #content-blocks-{{forloop.index0}} .cta-button:hover
+    {
+    color: {{item.colors.button-text-hover-color}};
+    background-color: {{item.colors.button-hover-color}};
+    border: solid 2px {{item.colors.button-text-hover-color}};
+    transition: all 0.5s;
+    }
+
+
+    #content-blocks-{{forloop.index0}} h1
+    {
+    color: {{item.colors.heading-color}};
+    font-family: {{item.fonts.heading-font}};
+    margin-bottom: 0;
+    }
+
+    #content-blocks-{{forloop.index0}} h2
+    {
+    color: {{item.colors.subheading-color}};
+    font-family: {{item.fonts.subheading-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} h3
+    {
+    color: {{item.colors.subheading-color}};
+    font-family: {{item.fonts.subheading-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} h4
+    {
+    color: {{item.colors.subheading-color}};
+    font-family: {{item.fonts.subheading-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} h5
+    {
+    color: {{item.colors.subheading-color}};
+    font-family: {{item.fonts.subheading-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} h6
+    {
+    color: {{item.colors.subheading-color}};
+    font-family: {{item.fonts.subheading-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} p
+    {
+    color: {{item.colors.text-color}};
+    font-family: {{item.fonts.text-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} a
+    {
+    color: {{item.colors.link-color}};
+    font-family: {{item.fonts.text-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} a:hover
+    {
+    color: {{item.colors.link-hover-color}};
+    }
+    
+    #content-blocks-{{forloop.index0}} .gallery-images-under-text
+     {
+     opacity: 1;
+     }
+
+     #content-blocks-{{forloop.index0}} .gallery-images-under-text:hover
+     {
+     opacity: 0.5;
+     transition: all 0.3s;
+     
+     }
+
+@media(max-width:768px) 
+ {
+    
+ #content-blocks-{{forloop.index0}}.cta-button { margin-top: -14rem !important; }
+ }
+ @media(max-width:576px) 
+ {
+
+   } 
+    
+
+</style>
+
+
+<section id="content-blocks-{{forloop.index0}}">
+ <section class="grid-center background-color mixed-gallery padded-sides" id="{{item.content-block-link}}">
+   <div class="col-12 padded-sides">
+     <h1> {{item.heading}}</h1>
+     {{item.textarea_html}}
+   </div>
+ 
+   <div class="grid-middle col-12">
+       <div class="grid-middle-center reveal fadeIn animatedFadeInLong animatedLong col-6_xs-12">
+           <a class="gallery-images-under-text landscape col-12 exibition-gallery border-1" data-fancybox="gallery" href="{{item.content-1.content-path}}" style="background-image: url('{{item.content-1.cover-image}}');">
+           </a>
+           <a class="gallery-images-under-text col-6 portrait exibition-gallery border-2 grid image-1 " data-fancybox="gallery" href="{{item.content-4.content-path}}" style="background-image: url('{{item.content-4.cover-image}}');">
+           </a>
+           <a class="gallery-images-under-text col-6 border-3 grid-center exibition-gallery image-2 portrait" data-fancybox="gallery" href="{{item.content-5.content-path}}" style="background-image: url('{{item.content-5.cover-image}}');">
+           </a>
+           <a class="gallery-images-under-text landscape col-12 border-4 exibition-gallery " data-fancybox="gallery" href="{{item.content-7.content-path}}" style="background-image: url('{{item.content-7.cover-image}}');">
+           </a>
+           <a href="{{item.cta-link}}" class=" cta-button center"> {{item.cta}}</a>
+       </div>
+       <div class="grid col-6_xs-12  reveal fadeIn animatedFadeInLong animatedLong">
+           <a class="gallery-images-under-text col-6 grid-center border-5 exibition-gallery  image-4 landscape" data-fancybox="gallery" href="{{item.content-2.content-path}}" style="background-image: url('{{item.content-2.cover-image}}');">
+           </a>
+           <a class="gallery-images-under-text col-6 grid-center border-5 reveal exibition-gallery  image-4 landscape" data-fancybox="gallery" href="{{item.content-3.content-path}}" style="background-image: url('{{item.content-3.cover-image}}');">
+          </a>
+           <a class="gallery-images-under-text col-12 border-6 grid-right exibition-gallery image-5 long-portrait" data-fancybox="gallery" href="{{item.content-6.content-path}}"  style="background-image: url('{{item.content-6.cover-image}}');"> 
+           </a>
+        </div>
+   </div>
+
+ </section>
+ <!-- epic gallery -->
+ <script>
+    $('[data-fancybox="gallery"]').fancybox({
+      loop: true,
+      buttons: [
+        "zoom",
+        "slideShow",
+        "thumbs",
+        "close"
+        ],
+        animationEffect: "zoom",
+         transitionEffect: "zoom-in-out",
+    });
+
+    </script>
+</section>

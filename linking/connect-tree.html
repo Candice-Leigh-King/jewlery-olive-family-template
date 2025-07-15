@@ -1,0 +1,97 @@
+---
+layout: connect-tree
+seo:
+  title: Candy and Jonty
+  description: >-
+    Candy and Jonty King are South Africa's most followed travel family who are using their platforms to free Palesrtine. Learn more about the family here.
+  keywords: south african creators, influencers, travel family, palestines, free palestine
+  social-alt: >-
+    Candy and Jonty King are South Africa's most followed travel family who are using their platforms to free Palesrtine. Learn more about the family here.
+  url: https://candyandtheking.com
+  social-share_image: /images/influencer-marketing/the-kings.jpg
+blocks:
+  first:
+    image: /images/academy-of-noor/6-steps-to-online-business.webp
+    textarea_html: <p class="center"><b>6 Steps To Grow Your Online Business</b></p><a href="https://academyofnoor.com/online-business-in-6-steps-free-guide">free download</a>
+  second:
+    image: /images/products/all-i-see-are-watermelons/all-i-see-are-watermelons.webp
+    textarea_html: <p class="center"><b>Donate $25 or more to receive my ebook on Palestine </b></p><a href="/products/1-all-i-see-are-watermelons">donate now</a>
+  third:
+    image: /images/fundraiser/palestine.jpg
+    textarea_html: <p class="center"><b>Emergency Relief For Palestinians</b></p><a href="https://gogetfunding.com/1forgaza/">donate here</a>
+  colors:
+    link-color: '#366e94'
+    link-border-color: '#366e94'
+    link-text-color: 'white'
+    border-color: '#9e9282'
+    text-color: '#9e9282'
+    background-color: '#9e9282'
+  fonts:
+    link-font: Mak
+    text-font: Raleway, sans-serif
+content-blocks:
+---
+
+<style>
+
+  p 
+  {
+  color: {{page.blocks.colors.text-color}};
+  font-family: {{page.blocks.fonts.text-font}};
+  font-size: 0.85rem;
+  }
+  .navigation-links img {height: 165px !important;} 
+
+  .nav-border-right {border-right: 1px solid {{page.blocks.colors.border-color}};}
+
+  .nav-border-bottom {border-bottom: 1px solid {{page.blocks.colors.border-color}};}
+
+  .second-block img {border: 1px solid {{page.blocks.colors.border-color}};}
+
+  a 
+  {
+  border-radius: 100% 100% 100% 100%;
+  background-color: {{page.blocks.colors.link-color}};
+  border: 1px solid {{page.blocks.colors.link-border-color}};
+  color: {{page.blocks.colors.link-text-color}} !important;
+  padding: 0.6rem 0.5rem;
+  border-radius: 100% 100% 100% 100%;
+  font-family: {{page.blocks.fonts.link-font}};
+  font-size: 1rem;
+  }
+
+  body {background-color: {{page.blocks.colors.background-color}};}
+
+  .full-height {height: 100vh;}
+</style>
+
+<section class="grid-middle padded-xs full-height">
+  <div class=" textarea-background-color center radius-arch col-12-middle grid-middle">
+    
+  <div class=" col-12 grid-center-middle  ">
+    <div class="col-12 grid padded-sides text-med exit navigation-links nav-border-bottom">
+      <div class="col-7-middle padded-s"> 
+        {{page.blocks.third.textarea_html}}
+      </div>  
+      <div class="col-5 ">
+        <div class=" second-block grid-center padded-s ">
+          <img src="{{page.blocks.third.image}}" alt="books on palestine">
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div class=" col-12 grid-center-middle  ">
+    <div class="col-12 grid padded-sides text-med exit navigation-links nav-border-bottom">
+      <div class="col-5 ">
+        <div class=" second-block grid-center padded-s ">
+          <img src="{{page.blocks.second.image}}" alt="palestine book">
+        </div>
+       </div>
+       <div class="col-7-middle padded-s">
+       {{page.blocks.second.textarea_html}}
+       </div>
+    </div>
+  </div>
+   </div>
+  </section>
