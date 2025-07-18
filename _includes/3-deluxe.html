@@ -2,7 +2,7 @@
   #content-blocks-{{forloop.index0}} .background-color 
   {
   background-color: {{item.colors.background-color}};
-  /* border: 40px solid {{item.colors.border-color}}; */
+  border: 10px solid {{item.colors.border-color}};
   }
 
 
@@ -85,7 +85,7 @@
 
   #content-blocks-{{forloop.index0}} h1 
   {
-  font-size: 7rem;
+  font-size: 4rem;
   color: {{item.colors.heading-color}};
   font-family: {{item.fonts.heading-font}};
   }
@@ -167,10 +167,11 @@
   @media(max-width:576px) 
   {
     #content-blocks-{{forloop.index0}} h1 
-    {font-size: 3rem; }
+    
+    {line-height: 50px;font-size: 3rem; }
 
     #content-blocks-{{forloop.index0}} h2 
-    {font-size: 2.5rem; }
+    {font-size: 2.5rem; margin-top: 20px;}
 
     #content-blocks-{{forloop.index0}} h3 
     {font-size: 2rem;}

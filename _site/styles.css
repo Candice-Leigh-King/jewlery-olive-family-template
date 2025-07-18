@@ -101,6 +101,12 @@ font-family: 'Shrikhand', cursive;*/
   font-family: Brushwell;
   src: url(/fonts/brushwell.otf);
   }
+
+@font-face 
+  {
+  font-family: Simple Serenity Serif;
+  src: url(/fonts/simple-serenity-serif.ttf);
+  }
   
   body {
   font-family: 'Poppins', sans-serif;
@@ -206,7 +212,7 @@ font-family: 'Shrikhand', cursive;*/
   
   h1 {
     color: #FDFAF0;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     font-style: normal;
     margin: 0 !important;
     font-weight: 400;
@@ -539,7 +545,11 @@ a .exibition-gallery {display: block;}
   background-repeat: no-repeat;
   }
 
-.background-color-p b {background-color: #3f3f40;}
+.background-color-p b 
+  {
+  background-color: #3f3f40;
+  margin-left: 20px;
+  }
 
 /*------------------ HEADER ----------------*/
 header 
@@ -932,6 +942,29 @@ input[type=submit]
   }
 
  /* -------SHOP---- */
+
+ .portfolio-arrow
+    {
+    transform: rotate(-180deg);
+    font-size: 1.5rem;
+    margin-bottom: -34px;
+    font-family: NeueMontreal-Light;
+    color: black
+    }
+
+  .blog-long-nav {}
+
+  .blog-nav
+  {  
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 13px;
+    scrollbar-width: none;     
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none; }    
   
  .shopify-button 
  {
@@ -1044,6 +1077,31 @@ font-size: 2.3rem;
 {font-size: 1.6rem;}
 
 .shop h6
+{font-size: 1.4rem;}
+
+.divine h1 
+{
+margin: 0px;
+line-height: 75px;
+font-size: 3.1rem;
+}
+
+.divine h2 
+{
+margin: 0px;
+font-size: 2.3rem;
+}
+
+.divine h3
+{font-size: 2rem;}
+
+.divine h4
+{font-size: 1.8rem;}
+
+.divine h5
+{font-size: 1.6rem;}
+
+.divine h6
 {font-size: 1.4rem;}
 
 .right-image  
@@ -1562,6 +1620,20 @@ header
       }
   
   .vertical-form-text {margin: -3%;}
+
+  /* DIVINE FADE  */
+  .divine h1 
+    {
+    font-size: 2.8rem;
+    line-height: 50px;
+    }
+
+  .divine h2 
+    {
+    margin-top: 8px;
+    font-size: 2rem;
+    }
+
 
   /* ----PURITY--- */
 

@@ -90,7 +90,7 @@
           /* --------------NAVIGATION------------ */
         
           --hamburgerColor: #ffffff;
-          --backgroundColor: #0a0a09;
+          --backgroundColor: #272727;
           --textareaBackgroundColor: #f8f6f4;
           --BorderColor: #0a0a09;
           --topLeftCorner: 0%;
@@ -99,7 +99,7 @@
           --bottomRightCorner: 0%;
           --linkColor: #0a0a09;
           --linkBackgroundHoverColor: white;
-          --linkFont: Mak;
+          --linkFont: Simple Serenity Serif;
           --HoverLinkColor: black;
           --iconColor: #366e94;
           --navSocialsBorderTopRight: 0px;
@@ -410,7 +410,7 @@
           <div class=" col-12 grid-center-middle  ">
             <div class="col-12 grid padded-sides text-med exit navigation-links nav-border-bottom">
               <div class="col-6-middle padded-s"> 
-                <p><a href="/portfolio">portfolio</a></p> <p><a href="/influencer-marketing">media kit</a></p>
+                <p><a href="/#about">About Us</a></p> <p><a href="/influencer-marketing">media kit</a></p>
               </div>  
               <div class="col-6 ">
                 <div class=" second-block grid-center padded-s ">
@@ -464,8 +464,8 @@
 
   #content-blocks- h2 
     {
-    color: #9E9282;
-    font-family: Mak;
+    color: black;
+    font-family: Playfair Display;
     }
 
   #content-blocks- .shop-background-color 
@@ -473,7 +473,7 @@
 
   #content-blocks-  .blog-hover-overlay:hover 
     {
-    background-color: #859f9f5c;
+    background-color: #00000080;
     color: white;
     }
 
@@ -486,57 +486,94 @@
   
   #content-blocks- .all-products h3
     {
-    font-family: Mak;
-    color: #9E9282;
+    font-family: Playfair Display;
+    color: black;
     }
 
   #content-blocks- .all-products h5
     {
-    font-family: brushwell;
+    font-family: Playfair Display;
     }
 
 
   #content-blocks- .all-products p
   {
-  font-family: Raleway, sans-serif;
-  color: #9E9282;
+  font-family: Roboto;
+  color: black;
   }
 
   #content-blocks- .stars p
   {
-  color: #859f9f;
+  color: #f0be35;
   }
 
   #content-blocks- .product-price
     {
-    background-color: #9b4851;
-    color: white
+    background-color: transparent;
+    color: #ae3d3d
     }
 
   #content-blocks- .compare-at-price
    {
    background-color: transparent;
-   color: #9b4851;
+   color: transparent;
    }
 
   #content-blocks- .categories
    {
-   border-top: 1px solid #9E9282;
-   border-bottom: 1px solid #9E9282;
-   color: #9E9282;
-   font-family: brushwell;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   color: black;
+   font-family: Playfair Display;
    padding-top: 1%;
    padding-bottom: 1%;
    }
 
-   #content-blocks- .categories p {font-size: 1.5rem;}
+   #content-blocks- .categories a
+    {
+    font-size: 1.5rem;
+    padding:0px 30px 0px 30px;
+    }
 
-  #content-blocks- a:hover
-   {color: #366e94;}
+  #content-blocks- .category-1
+  {
+   border: solid 1px black;
+   border-radius: 100%;
+  }
+
+  #content-blocks- .category-2
+  {
+   border: solid 1px transparent;
+   border-radius: 100%;
+  }
+
+  #content-blocks- .category-3
+  {
+   border: solid 1px transparent;
+   border-radius: 100%;
+  }
+
+  #content-blocks- .category-4
+  {
+   border: solid 1px transparent;
+   border-radius: 100%;
+  }
+
+  #content-blocks- .category-5
+  {
+   border: solid 1px transparent;
+   border-radius: 100%;
+  }
+
+  #content-blocks- .categories a:hover
+   {
+    background-color: black;
+    color: white;
+    }
 
   #content-blocks- .dot
   {
-  color: #9E9282
+  color: black
   }
 
 </style>
@@ -544,40 +581,38 @@
 <section id="content-blocks-"> 
   <section class="shop-background-color center grid padded-top">
     <div class="col-12 padded">
-      <h2> Shop All</h2>
+      <h2> SHOP ALL</h2>
     </div>
   </section>
 
   <section class="grid-center center centered padded-2 categories lighter-bg shop">
-    <div class="col-3">
-     <p class="">
-        <a class="" href="/shop-categories/shop"> all </a> 
-     </p>
-    </div>
-    <div class="col-1 dot ">
-     <p class=" ">•</p>
-    </div>
-    <div class="col-3-center"> 
-     <p class=" ">  
-        <a class="" href="/shop-categories/favorites"> favorites </a> 
-     </p>
-    </div>
-    <div class="col-1 dot ">
-      <p class=" ">•</p>
-     </div>
-     <div class="col-3-center"> 
-      <p class=" ">  
-         <a class="" href="/shop-categories/ebooks"> ebooks </a> 
+    <p class="col-12 center desktop-hide portfolio-arrow">⟵</p>
+    <nav class="blog-long-nav blog-nav">
+    
+     
+        <a class=" category-1" href="/shop-categories/shop">All </a> 
+        <span class="dot">•</span>
+ 
+        <a class=" category-2" href="/shop-categories/save-lives"> Pieces that <i>save lives</i> </a> 
+        <span class="dot">•</span>
+
+        <a class=" category-3" href="/shop-categories/most-loved"> Most loved </a> 
+        <span class="dot">•</span>
+      
+        <a class="category-4" href="/shop-categories/necklaces"> Necklaces </a> 
+        <span class="dot">•</span>
+        <a class="category-5" href="/shop-categories/rings"> Rings </a> 
       </p>
      </div>
+     </nav>
 </section> 
 
 <style>
 
   #content-blocks- h2 
     {
-    color: #9E9282;
-    font-family: Mak;
+    color: black;
+    font-family: Playfair Display;
     }
 
   #content-blocks- .shop-background-color 
@@ -585,7 +620,7 @@
 
   #content-blocks-  .blog-hover-overlay:hover 
     {
-    background-color: #859f9f5c;
+    background-color: #00000080;
     color: white;
     }
 
@@ -604,58 +639,59 @@
   
   #content-blocks- .all-products h3
     {
-    font-family: Mak;
-    color: #9E9282;
+    font-family: Playfair Display;
+    color: black;
     }
 
   #content-blocks- .all-products h5
     {
-    font-family: brushwell;
+    font-family: Playfair Display;
     }
 
 
   #content-blocks- .all-products p
   {
-  font-family: Raleway, sans-serif;
-  color: #9E9282;
+  font-family: Roboto;
+  color: black;
   }
 
   #content-blocks- .stars p
   {
-  color: #859f9f;
+  color: #f0be35;
   }
 
   #content-blocks- .stars a {text-align: centerS;}
 
   #content-blocks- .product-price
     {
-    background-color: #9b4851;
-    color: white
+    background-color: transparent;
+    color: #ae3d3d
     }
 
   #content-blocks- .compare-at-price
    {
    background-color: transparent;
-   color: #9b4851;
+   color: transparent;
    } 
 
    #content-blocks- .button
    {
-   background-color: #9E9282;
+   background-color: black;
    color: white;
-   font-family: Mak;
-   border-top-left-radius: 100%;
-   border-top-right-radius: 100%;
-   border-bottom-left-radius: 100%;
-   border-bottom-right-radius: 100%;
+   font-family: Playfair Display;
+   border-top-left-radius: 0%;
+   border-top-right-radius: 0%;
+   border-bottom-left-radius: 0%;
+   border-bottom-right-radius: 0%;
    padding: 10px 30px;
    border: solid 2px white;
    }
 
    #content-blocks- .button:hover
    {
-   background-color: #366e94;
-   color: white;
+   background-color: white;
+   color: black;
+   border: solid 2px black;
 </style>
 
 

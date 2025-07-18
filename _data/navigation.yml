@@ -10,7 +10,7 @@ first-block:
 second-block:
   image: /images/food-photography/camrea.png 
   textarea_html: >-
-    <p><a href="/portfolio">portfolio</a></p>
+    <p><a href="/#about">About Us</a></p>
     <p><a href="/influencer-marketing">media kit</a></p>
   border-radius:
     border-top-left-corner: 0%
@@ -40,7 +40,7 @@ fourth-block:
   border-color: '#0a0a09'
 colors:
   hamburger-color: '#ffffff'
-  background-color: '#0a0a09'
+  background-color: '#272727'
   textarea-background-color: '#f8f6f4'
   border-color: '#0a0a09'
   link-color: '#0a0a09'
@@ -54,7 +54,7 @@ border-radius:
   bottom-left-corner: 0%
   bottom-right-corner: 0%
 fonts:
-  link-font: Mak
+  link-font: Simple Serenity Serif
 social-link-colors:
   icon-color: '#366e94'
   icon-hover-color: '#9e9282'

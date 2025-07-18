@@ -71,10 +71,47 @@ layout: default
    padding-bottom: 1%;
    }
 
-   #content-blocks-{{forloop.index0}} .categories p {font-size: 1.5rem;}
+   #content-blocks-{{forloop.index0}} .categories a
+    {
+    font-size: 1.5rem;
+    padding:0px 30px 0px 30px;
+    }
 
-  #content-blocks-{{forloop.index0}} a:hover
-   {color: {{page.colors.category-text-hover-color}};}
+  #content-blocks-{{forloop.index0}} .category-1
+  {
+   border: solid 1px {{page.colors.page-nav-1-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-2
+  {
+   border: solid 1px {{page.colors.page-nav-2-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-3
+  {
+   border: solid 1px {{page.colors.page-nav-3-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-4
+  {
+   border: solid 1px {{page.colors.page-nav-4-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-5
+  {
+   border: solid 1px {{page.colors.page-nav-5-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .categories a:hover
+   {
+    background-color: {{page.colors.category-text-background-hover-color}};
+    color: {{page.colors.category-text-hover-color}};
+    }
 
   #content-blocks-{{forloop.index0}} .dot
   {
@@ -91,27 +128,25 @@ layout: default
   </section>
 
   <section class="grid-center center centered padded-2 categories lighter-bg shop">
-    <div class="col-3">
-     <p class="">
-        <a class="" href="{{page.category-1.link}}"> {{page.category-1.heading}} </a> 
-     </p>
-    </div>
-    <div class="col-1 dot ">
-     <p class=" ">{{page.category-symbol}}</p>
-    </div>
-    <div class="col-3-center"> 
-     <p class=" ">  
-        <a class="" href="{{page.category-2.link}}"> {{page.category-2.heading}} </a> 
-     </p>
-    </div>
-    <div class="col-1 dot ">
-      <p class=" ">{{page.category-symbol}}</p>
-     </div>
-     <div class="col-3-center"> 
-      <p class=" ">  
-         <a class="" href="{{page.category-3.link}}"> {{page.category-3.heading}} </a> 
+    <p class="col-12 center desktop-hide portfolio-arrow">⟵</p>
+    <nav class="blog-long-nav blog-nav">
+    
+     
+        <a class=" category-1" href="{{page.category-1.link}}">{{page.category-1.heading}} </a> 
+        <span class="dot">{{page.category-symbol}}</span>
+ 
+        <a class=" category-2" href="{{page.category-2.link}}"> {{page.category-2.heading}} </a> 
+        <span class="dot">{{page.category-symbol}}</span>
+
+        <a class=" category-3" href="{{page.category-3.link}}"> {{page.category-3.heading}} </a> 
+        <span class="dot">{{page.category-symbol}}</span>
+      
+        <a class="category-4" href="{{page.category-4.link}}"> {{page.category-4.heading}} </a> 
+        <span class="dot">{{page.category-symbol}}</span>
+        <a class="category-5" href="{{page.category-5.link}}"> {{page.category-5.heading}} </a> 
       </p>
      </div>
+     </nav>
 </section> 
 
 {{content}}
