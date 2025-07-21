@@ -22,8 +22,8 @@ category-4:
   link: /shop-categories/necklaces
 category-symbol: •
 category-5: 
-  heading: Rings
-  link: /shop-categories/rings
+  heading: Earrings
+  link: /shop-categories/earrings
 colors:
  heading-color: 'black'
  product-title-color: 'black'
@@ -157,8 +157,8 @@ border-radius:
 
 <section id="content-blocks-{{forloop.index0}}">
     <section class="shop-background-color padded-sides grid-left all-products">
-        {% assign all_products = site.products | where: 'all_products', true %}
-        {% for shop in all_products %}
+        {% assign charity_products = site.products | where: 'charity_products', true %}
+        {% for shop in charity_products %}
         <div class="padded-1 col-4_sm-6_xs-12">
           <a class="padded" href="{{shop.url}}">
             <div class="hover-container" style="background-image:url('{{shop.shop-hero.product-image}}')">

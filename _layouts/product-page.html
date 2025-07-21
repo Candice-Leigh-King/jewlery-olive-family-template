@@ -222,10 +222,25 @@ layout: default
 <section class="shop padded product-background-color">
   <div class="padded-top grid-center">
     <h4 class="col-12 center padded-bottom more-products"> <a href="/shop-categories/shop.html"> ← More Products</a></h4>
-    <div class="col-6_sm-12 shop-padded centered ">
-      <img class="box-shadow" src="{{page.shop-hero.product-image}}" alt="" />
-    </div>
-    <div class="col-6_sm-12 grid">
+    <div class="col-6_sm-12 padded grid centered ">
+      {% if page.shop-hero.carousel-image.no_enabled %}
+        <img class="box-shadow" src="{{page.shop-hero.product-image}}" alt="" />
+        {% endif %}
+        
+        {% if page.shop-hero.carousel-image.yes_enabled %}
+        <div class="col-12 text-center slider-for">
+          {% for carousel in page.shop-hero.carousel %}
+          <img class="box-shadow" src="{{carousel.product-image}}" alt="" />
+          {% endfor %}
+        </div>
+        <div class="col-12 shop-padded text-center slider-nav">
+          {% for carousel in page.shop-hero.carousel %}
+          <img class="box-shadow" src="{{carousel.product-image}}" alt="" />
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    <div class="col-6_sm-12 padded grid">
       <div class="centered col-12">
         <h2>{{page.shop-hero.subheading}}</h2>
         <h1>{{page.shop-hero.product-name}}</h1>
