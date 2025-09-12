@@ -1257,7 +1257,11 @@ select {padding: 0.7rem 0 0.5rem}
 input:focus, textarea:focus
   {outline: 0;}
 
-.footer-bg {background-size: cover;}
+.footer-bg 
+  {
+  background-size: cover;
+  padding: 12px !important;
+  }
 
 .footer-image 
   { 
@@ -1290,8 +1294,8 @@ border: #FAE6D4 solid;
   color: #F8DCC2;
   background-color: #FAE6D4;
   border-radius: 90px;
-  font-size: 2rem;
-  padding: 5px 0px 0px;
+  font-size: 1rem;
+  padding: 10px 0px 5px 0px;
   border: #FAE6D4 solid;
   }
 
