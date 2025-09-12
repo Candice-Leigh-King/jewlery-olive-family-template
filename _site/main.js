@@ -143,11 +143,44 @@ $(document).ready(function() {
 			$('.slider-nav').slick({
 				slidesToShow: 3,
 				slidesToScroll: 1,
+				arrows: false,
 				asNavFor: '.slider-for',
 				dots: false,
 				centerMode: true,
 				focusOnSelect: true
 				 });
+
+			$('.multiple-items').slick({
+				infinite: true,
+				slidesToShow: 6,              
+				slidesToScroll: 6,
+				autoplay: true,
+				autoplaySpeed: 0,             
+				speed: 20000,                  
+				cssEase: 'linear',                   
+				arrows: false,
+				dots: false,
+				responsive: [
+					{
+					  breakpoint: 1024,     // Tablet (<= 1024px)
+					  settings: {
+						slidesToShow: 3
+					  }
+					},
+					{
+					  breakpoint: 768,      // Mobile (<= 768px)
+					  settings: {
+						slidesToShow: 2
+					  }
+					},
+					{
+					  breakpoint: 480,      // Small phones (<= 480px)
+					  settings: {
+						slidesToShow: 1
+					  }
+					}
+				  ]
+				});
 				
 				
 

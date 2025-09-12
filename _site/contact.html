@@ -44,6 +44,7 @@
       <link rel="manifest" href="/site.webmanifest" />
 
       <!-- GOOGLE FONTS -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=ecg_heart" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
@@ -99,7 +100,7 @@
           --bottomRightCorner: 0%;
           --linkColor: #0a0a09;
           --linkBackgroundHoverColor: white;
-          --linkFont: Simple Serenity Serif;
+          --linkFont: Playfair Display;
           --HoverLinkColor: black;
           --iconColor: #366e94;
           --navSocialsBorderTopRight: 0px;
@@ -403,14 +404,14 @@
                 </div>
                </div>
               <div class="col-6-middle padded-s"> 
-                <p><a href="/shop-categories/shop">shop</a></p>
+                <p><a href="/shop-categories/shop">SHOP</a></p>
               </div>  
             </div>
           </div>
           <div class=" col-12 grid-center-middle  ">
             <div class="col-12 grid padded-sides text-med exit navigation-links nav-border-bottom">
               <div class="col-6-middle padded-s"> 
-                <p><a href="/#about">About Us</a></p> <p><a href="/influencer-marketing">media kit</a></p>
+                <p><a href="/#about">ABOUT US</a></p> <p><a href="/influencer-marketing">DONATE</a></p>
               </div>  
               <div class="col-6 ">
                 <div class=" second-block grid-center padded-s ">
@@ -427,14 +428,14 @@
                 </div>
                </div>
               <div class="col-6-middle padded-s"> 
-                <p><a href="/#services">services</a></p> <p><a href="/#about">about us</a></p>
+                <p><a href="/#services">MOST LOVED</a></p>
               </div>  
             </div>
           </div>
           <div class=" col-12 grid-center-middle  ">
             <div class="col-12 grid padded-sides text-med exit navigation-links nav-border-bottom">
               <div class="col-6-middle padded-s"> 
-                <p><a href="/contact">contact us</a></p>
+                <p><a href="/contact">CONTACT US</a></p>
               </div>  
               <div class="col-6 ">
                 <div class=" fourth-block grid-center padded-s ">
@@ -590,15 +591,17 @@
   #content-block-0 .button-text-color
    {
    color: white;
+
    }
+  
  
   #content-block-0 .button-font 
    {
     font-family: Mak;
     background-color: #366E94;
-    border: 1px solid #366E94;
+    border: 1px solid ;
     font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     border-bottom-left-radius: 100%;
@@ -609,14 +612,16 @@
    {color: #366E94;}   
  
   #content-block-0 .button-color:hover
-   {background-color: transparent;}
+   {background-color: #9E9282;
+   border: 1px solid ;
+  }
 
    #content-block-0 .socials-form a 
    {
     margin: 10px;
     background-color: transparent;
     color: #9E9282;
-    border: 1.5px solid #9E9282;
+    border: 1px solid #9E9282;
    }
    #content-block-0 .socials-form a:hover
    {
@@ -678,16 +683,6 @@
              <input type="text" name="Your WhatsApp (if preferred)" placeholder="Your WhatsApp (if preferred)" class="input-text form-text-color" />
              <label class="input-label">Your WhatsApp (if preferred)</label>
            </div>
-
-            <div class="floating-input ">
-              <select class="input-text" name="services " id="services" required="">
-                <option class="input-text form-text-color dropdown">What service do you require?</option>
-                <option class="input-text form-text-color dropdown" value="Content Creation">Content Creation</option>
-                <option class="input-text form-text-color dropdown" value="Influencer Marketing">Influencer Marketing</option>
-                <option class="input-text form-text-color dropdown" value="Social Media Management">Social Media Management</option>
-                <option class="input-text form-text-color dropdown" value="Other">Other</option>
-              </select>
-            </div>
              <div class="floating-input ">
               <textarea name="Tell us a little bit about your business or brand" placeholder="Tell us a little bit about your business or brand" class="input-text form-text-color"></textarea>
               <label class="input-label">Tell us a little bit about your business or brand</label>

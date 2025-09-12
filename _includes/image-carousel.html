@@ -1,0 +1,35 @@
+<style>
+
+    #content-blocks-{{forloop.index0}} .multiple-items 
+    {
+    width: 100px;
+    height: 255px;
+    object-fit: cover;
+    }  
+
+#content-blocks-{{forloop.index0}} .multiple-items img
+    {
+    border: black solid 1px;
+    }
+
+        
+@media(max-width:768px) 
+    {
+    #content-blocks-{{forloop.index0}} .multiple-items 
+    {
+    height: 430px;
+    }  
+    
+    }
+</style>
+<section id="content-blocks-{{forloop.index0}}" class="center">
+    <section id="{{item.content-block-link}}" class=" padded-s grid-center-middle">
+
+<section class="col-10 grid image-carousel">
+    <div class="col-12 text-center multiple-items">
+        {% for carousel in item.carousel %}
+      <img class="box-shadow multiple-items" src="{{carousel.add-your-image}}" alt="" />
+      {% endfor %}
+</section>
+    </section>
+</section>

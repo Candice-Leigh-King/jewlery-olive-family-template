@@ -146,6 +146,7 @@ font-family: 'Shrikhand', cursive;*/
   .padded-xs {padding: 1%;}
   .no-margin {margin: 0;}
 
+
   
 .dark-bg      {  background-color: #CE967A;     }
 .light-bg     {  background-color: #BCCACA; }
@@ -1270,9 +1271,9 @@ input:focus, textarea:focus
 {
 color: #F8DCC2;
 background-color: #FAE6D4;
-border-radius: 90px;
-font-size: 2rem;
-padding: 5px 0px 0px;
+border-radius: 100px;
+font-size: 1.2rem;
+padding: 10px 0px 5px 0px;
 border: #FAE6D4 solid;
 }
 

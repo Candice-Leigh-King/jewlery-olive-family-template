@@ -1,6 +1,6 @@
 first-block:
   image: /images/products/hotel-collabs/on-sale3.jpg
-  textarea_html: <p><a href="/shop-categories/shop">shop</a></p>
+  textarea_html: <p><a href="/shop-categories/shop">SHOP</a></p>
   border-radius:
     border-top-left-corner: 100%
     border-top-right-corner: 100%
@@ -10,8 +10,8 @@ first-block:
 second-block:
   image: /images/food-photography/camrea.png 
   textarea_html: >-
-    <p><a href="/#about">About Us</a></p>
-    <p><a href="/influencer-marketing">media kit</a></p>
+    <p><a href="/#about">ABOUT US</a></p>
+    <p><a href="/influencer-marketing">DONATE</a></p>
   border-radius:
     border-top-left-corner: 0%
     border-top-right-corner: 0%
@@ -21,8 +21,7 @@ second-block:
 third-block:
   image: /images/services.webp
   textarea_html: >-
-    <p><a href="/#services">services</a></p>
-    <p><a href="/#about">about us</a></p>
+    <p><a href="/#services">MOST LOVED</a></p>
   border-radius:
     border-top-left-corner: 100%
     border-top-right-corner: 100%
@@ -31,7 +30,7 @@ third-block:
   border-color: '#0a0a09'
 fourth-block:
   image: /images/contact-the-kings.webp
-  textarea_html: <p><a href="/contact">contact us</a></p>
+  textarea_html: <p><a href="/contact">CONTACT US</a></p>
   border-radius:
     border-top-left-corner: 0%
     border-top-right-corner: 0%
@@ -54,7 +53,7 @@ border-radius:
   bottom-left-corner: 0%
   bottom-right-corner: 0%
 fonts:
-  link-font: Simple Serenity Serif
+  link-font: Playfair Display
 social-link-colors:
   icon-color: '#366e94'
   icon-hover-color: '#9e9282'
