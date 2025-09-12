@@ -30,7 +30,7 @@ third-block:
   border-color: '#0a0a09'
 fourth-block:
   image: /images/contact-the-kings.webp
-  textarea_html: <p><a href="/contact">CONTACT US</a></p>
+  textarea_html: <p><a href="/#contact">CONTACT US</a></p>
   border-radius:
     border-top-left-corner: 0%
     border-top-right-corner: 0%
