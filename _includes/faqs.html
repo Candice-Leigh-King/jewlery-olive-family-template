@@ -10,6 +10,7 @@
 #content-blocks-{{forloop.index0}} h2 
   {
   color: {{item.colors.heading-color}};
+  line-height: 55px;
   font-family: {{item.fonts.heading-font}};
   }
 
@@ -41,7 +42,11 @@
 
   #content-blocks-{{forloop.index0}} .background-color {background-color: {{item.colors.background-color}};}
 
-  #content-blocks-{{forloop.index0}} .faq-background-color {background-color: {{item.colors.faq-background-color}};}
+  #content-blocks-{{forloop.index0}} .faq-background-color 
+  {
+    background-color: {{item.colors.faq-background-color}};
+    border: solid 2px {{item.colors.faq-border-color}};
+  }
 
 
 /* Accordian slides */
@@ -103,12 +108,12 @@
 
 <section id="content-blocks-{{forloop.index0}}" class="  ">
   <section class="background-color grid-center  padded-sides ">
-    <section id="{{content-block-link}}" class="padded-sides  col-9_xs-12">
+    <section id="{{content-block-link}}" class="padded-sides faq-background-color col-9_xs-12">
 
-    <h2 class="center padded-1"> {{item.heading}} </h2>
+    <h2 class="padded-1"> {{item.heading}} </h2>
 
     <!-- dl stands for description list, with a description title and a description description -->
-    <dl class=" faq-background-color padded-1 plus">
+    <dl class="  padded-1 plus">
       <div class="accordion1">
         <div class="accordion ">
          <h4 class="">{{item.question-1.heading}} </h4>
@@ -151,7 +156,7 @@
         </div>
       </div>
     </div>
-
+<!-- 
      <div class="accordion6">
       <div class="accordion">
         <h4 class=""> {{item.question-6.heading}}</h4>
@@ -176,7 +181,7 @@
       <div class="panel8">
         {{item.question-8.textarea_html}}
         </div>
-      </div>
+      </div> -->
     </div> 
     </section>
 
