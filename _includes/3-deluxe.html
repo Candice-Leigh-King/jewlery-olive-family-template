@@ -29,6 +29,7 @@
   {
   margin-top: -5.5rem;
   background-color: {{item.colors.cards-background-color}};
+  border: solid 2px {{item.colors.card-border-color}};
   }
 
   #content-blocks-{{forloop.index0}} .left-card
@@ -100,8 +101,8 @@
   #content-blocks-{{forloop.index0}} h3 
   {
   font-size: 2.5rem;
-  color: {{item.colors.subheading-color}};
-  font-family: {{item.fonts.subheading-font}};
+  color: {{item.colors.heading-color}};
+  font-family: {{item.fonts.heading-font}};
   }
 
   #content-blocks-{{forloop.index0}} h4 
@@ -197,31 +198,31 @@
 
 <section id="content-blocks-{{forloop.index0}}">
   <section id="{{item.content-block-link}}" style="background-image: url('{{item.background-image}}');" class="grid-center purity-content-block padded-bottom background-color">
-    <div class="col-12 padded-sides">
+    <div class="col-12 padded-sides padded-bottom">
       {{item.top.textarea_html}}
     </div>
-    <div class="col-4_sm-6_xs-12 reveal fade-left grid padded-top cards textarea padded-sides ">
-      <div class="col-12 image left-card" style="background-image: url('{{item.left.image}}');"></div>
-        <div class="col-11 textarea purity-button padded-s">
+    <div class="col-4_sm-12 reveal fade-left grid padded-top cards textarea padded-sides-s ">
+      <!-- <div class="col-12 image left-card" style="background-image: url('{{item.left.image}}');"></div> -->
+        <div class="col-12 textarea purity-button padded-s">
           {{item.left.textarea_html}} 
           {{item.left.cta_html}}
         </div>  
       </div>
-      <div class="col-4_sm-6_xs-12 reveal fade-up grid-center padded-top cards textarea padded-sides ">
-        <div class="col-12 image middle-card" style="background-image: url('{{item.middle.image}}');"></div>
-          <div class="col-11 textarea purity-button padded-s">
+      <div class="col-4_sm-12 reveal fade-up grid-center padded-top cards textarea padded-sides-s ">
+        <!-- <div class="col-12 image middle-card" style="background-image: url('{{item.middle.image}}');"></div> -->
+          <div class="col-12 textarea purity-button padded-s">
             {{item.middle.textarea_html}} 
             {{item.middle.cta_html}}
           </div>  
         </div>
-        <div class="col-4_sm-6_xs-12 reveal fade-right grid-center  padded-top cards textarea padded-sides ">
-          <div class="col-12 image right-card" style="background-image: url('{{item.right.image}}');"></div>
-            <div class="col-11 textarea purity-button padded-s">
+        <div class="col-4_sm-12 reveal fade-right grid-center  padded-top cards textarea padded-sides-s ">
+          <!-- <div class="col-12 image right-card" style="background-image: url('{{item.right.image}}');"></div> -->
+            <div class="col-12 textarea purity-button padded-s">
               {{item.right.textarea_html}} 
               {{item.right.cta_html}}
             </div>  
           </div>
-        <div class="col-4_sm-6_xs-12 desktop-hide reveal fade-down grid-middle padded-top cards textarea padded-sides ">
+        <div class="col-4_sm-12 desktop-hide reveal fade-down grid-middle padded-top cards textarea padded-sides ">
             <div class="col-12 image-last" style="background-image: url('{{item.tablet-image}}');"></div> 
             </div>
     </div>
