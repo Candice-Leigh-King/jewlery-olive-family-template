@@ -1,0 +1,565 @@
+document.body
+  ? setSubscribeFn()
+  : window.onload = () => setSubscribeFn()
+
+
+function setSubscribeFn() {
+  // 当前引用环境的domain
+  const domain = window.location.host || document.domain
+  // 接口api
+  const API = {
+    create: '/userCenterForeignWeb/subscribe/addSubscribe', // 创建API
+    translate: '/cj-translation-api/v2/word/findWorldAndUrlByApplicationId'
+  }
+  // 默认六国翻译英文
+  const defaultTranslate = {
+    "chat-subscribe-subscribe-to-our-latest-niches": "Subscribe to our latest niches",
+    "chat-subscribe-your-name": "Your Name",
+    "chat-subscribe-please-enter-your-name": "Please enter your name",
+    "chat-subscribe-your-email": "Your Email",
+    "chat-subscribe-please-enter-your-email": "Please enter your email",
+    "chat-subscribe-whatsapp": "WhatsAPP",
+    "chat-subscribe-please-enter-whatsapp": "Please enter WhatsAPP",
+    "chat-subscribe-skip": "Skip",
+    "chat-subscribe-subscribe": "Subscribe",
+    "chat-subscribe-connect-with-cj-whatsapp": "Connect with CJ WhatsApp",
+    "chat-subscribe-connect-with-wechat-1": "Connect with CJ WeChat",
+    "chat-subscribe-we-chat": "WeChat",
+  }
+  // 窗口宽度
+  const curwidth = document.documentElement.clientWidth || document.body.clientWidth
+  const curheight = document.body.clientHeight
+  // 计算1rem换算的px
+  const curRem = curwidth / 10
+  // 存储cookie用的变量
+  let cookieDomain = ''
+    , appUrl = ''
+    , translateIp = ''
+    , interval = null
+    , languagePack = {}
+    , imgUrl = '';
+
+  const _config = {
+    "prod": {
+      cookieDomain: domain,
+      appUrl: 'https://www.cjdropshipping.com',
+      translateIp: 'https://translation.cjdropshipping.com',
+      imgUrl: 'https://frontend.cjdropshipping.com/common-private/',
+    },
+    "prod-cn": {
+      cookieDomain: domain,
+      appUrl: 'https://app.cjdropshipping.cn',
+      translateIp: 'https://translation.cjdropshipping.com',
+      imgUrl: 'https://frontend.cjdropshipping.cn/common-private/',
+    },
+    "test": {
+      cookieDomain: 'test.com',
+      appUrl: 'http://www.cjdropshipping.offline.pre.com',
+      translateIp: 'https://translation.cjdropshipping.com',
+      imgUrl: 'https://test-frontend.cjdropshipping.com/common-private/'
+    },
+    "dev": {
+      cookieDomain: domain.split(':')[0],
+      appUrl: 'http://www.cjdropshipping.offline.pre.com',
+      translateIp: 'https://translation.cjdropshipping.com',
+      imgUrl: 'https://test-frontend.cjdropshipping.com/common-private/',
+    },
+  }
+
+  // 初始化
+  initFn()
+  function initFn() {
+    // 对外抛出初始化方法
+    window.initSubScribe = (environment = 'prod') => {
+      // 配置
+      const targetConfig = _config[environment] ? _config[environment] : _config['dev'];
+
+      cookieDomain = targetConfig.cookieDomain;
+      appUrl = targetConfig.appUrl;
+      translateIp = targetConfig.translateIp;
+      imgUrl = targetConfig.imgUrl;
+      // 下载语言包
+      downloadTranslateFn();
+    }
+  }
+
+  // 下载语言包
+  function downloadTranslateFn() {
+    const localData = localStorage.getItem('SUBSCRIBE_LOCAL_LANG_STORE')
+    if (localData) {
+      let lngData = {}
+      try {
+        lngData = JSON.parse(localData)
+      } catch (error) {
+
+      }
+      if (Object.keys(lngData).length) {
+        const { timestamp, data: _worldLanguageDTO } = lngData
+        const nowDate = new Date().getTime()
+        if (nowDate - timestamp <= 24 * 60 * 60 * 1000) {
+          // 不到24小时用缓存
+          disposeTranslate(_worldLanguageDTO)
+          return
+        }
+      }
+    }
+    const url = `${translateIp}${API.translate}?applicationId=1391933701855846400`
+    ajaxGetFun({
+      href: url,
+      callback: (res) => {
+        const { data } = res
+        if (data && data.length) {
+          const tObj = data[0]
+          const { worldLanguageDTO } = tObj
+          if (worldLanguageDTO) {
+            disposeTranslate(worldLanguageDTO)
+            localStorage.setItem('SUBSCRIBE_LOCAL_LANG_STORE', JSON.stringify({
+              data: worldLanguageDTO,
+              timestamp: new Date().getTime(),
+            }))
+          } else {
+            initLoadSubscribe()
+          }
+        } else {
+          initLoadSubscribe()
+        }
+      }
+    })
+  }
+
+  // 处理语言包 en, zh, de, fr, id, th
+  function disposeTranslate(tDTO) {
+    const cookielng = getCookieFn('lng') || ''
+    const cookielocal = window.localStorage.getItem('lng') || ''
+    const lng = cookielng || cookielocal || 'en'
+    const translateList = tDTO[lng] || tDTO['en']
+    translateList.forEach(item => {
+      languagePack[item.bizCode] = item.value
+    })
+    // console.log('languagePack', languagePack)
+    initLoadSubscribe()
+  }
+
+  // 是否加载订阅
+  function initLoadSubscribe() {
+    console.log('init load')
+    const chatCJName = getCookieFn('cjLoginName') || ''
+    const temchatname = getCookieFn('asj_temchatname') || ''
+    const hasYindaoFlag = getCookieFn('hasYindao')
+    // cj-blog地址
+    const blogArr = ['127.0.0.1:7001', 'master.cjblog.web.cj.com', 'blog.cjdropshipping.com', 'blog.cjdropshipping.cn'];
+    // 特殊的域名不加载订阅
+    const arr = ['cod.cjdropshipping.com', '192.168.5.239:8901', 'fj.cjdropshipping.com', ...blogArr]
+    // 当cj登录或者已注册了临时用户；或者已打开过订阅；或者不在cod等特殊域名下的时候不加载订阅
+    // 同时检查屏幕宽度，小于1200px时不加载订阅
+    !chatCJName && !temchatname && !hasYindaoFlag && !arr.includes(domain) && curwidth > 1200 && createSubscribe()
+  }
+
+  // 将浏览器时间转化成中国时区时间，微信聊天需要
+  function formate(data, format, i = 8) {
+    let d = new Date(data);
+    //得到1970年一月一日到现在的秒数
+    let len = d.getTime();
+    //本地时间与GMT时间的时间偏移差
+    let offset = d.getTimezoneOffset() * 60000;
+    //得到现在的格林尼治时间
+    let utcTime = len + offset;
+    data = new Date(utcTime + 3600000 * i);
+
+    if (!format) {
+      return data
+    }
+
+    let o = {
+      'M+': data.getMonth() + 1, // month
+      'd+': data.getDate(), // day
+      'h+': data.getHours(), // hour
+      'm+': data.getMinutes(), // minute
+      's+': data.getSeconds(), // second
+      'q+': Math.floor((data.getMonth() + 3) / 3), // quarter
+      'S': data.getMilliseconds() // millisecond
+    }
+    if (/(y+)/.test(format)) {
+      format = format.replace(RegExp.$1, (data.getFullYear() + '').substr(4 - RegExp.$1.length))
+    }
+    for (let k in o) {
+      if (new RegExp('(' + k + ')').test(format)) {
+        format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length))
+      }
+    }
+    return format
+  }
+
+  function toWechat() {
+    const cnHour = formate(new Date(), 'hh'); // format传入hh只会返回24进制的时
+    const hour = Number(cnHour);
+    let wechatLink = '';
+    if (hour < 4) {
+      wechatLink = 'https://work.weixin.qq.com/kfid/kfccc24480186a5528a';
+    } else if (hour < 9) {
+      wechatLink = 'https://work.weixin.qq.com/kfid/kfc353da557aa2dcc0c';
+    } else if (hour < 21) {
+      wechatLink = 'https://work.weixin.qq.com/kfid/kfce07f5467b4567097 ';
+    } else {
+      wechatLink = 'https://work.weixin.qq.com/kfid/kfc6a6fc73965d41567';
+    }
+    window.open(wechatLink, '_blank', 'noopener');
+  }
+
+  // 创建订阅
+  function createSubscribe(emailText) {
+    const mask = document.createElement('div')
+    mask.id = 'subscribe-mask'
+
+    let bg = `${imgUrl}subscribe-bg.png`;
+    if (localStorage.getItem('affiliateCJ') === 'true') {// 如果是分销cj,替换一张背景图
+      bg = `${imgUrl}subscribe-af-bg.png`
+    }
+    const wechatIcon = `${imgUrl}weChat-icon.svg`;
+    const arrowsUrl = `${imgUrl}subscribeImg/arrows.png`;
+    const arrowsHoverUrl = `${imgUrl}subscribeImg/arrows-hover.png`;
+
+    mask.innerHTML = `
+    <style>
+    #subscribe-mask{position: fixed;top: 0;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,0.5);display: flex;align-items: center;justify-content: center; z-index: 100005}
+			#subscribe-box{background: #fff; width: 780px; height: 564px; border-radius: 8px; box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.1);display: flex;justify-content: space-between; position: relative; overflow: hidden;}
+			.subscribe-item{width: 50%;}
+			#subscribe-left{position: relative; display: flex;flex-direction: column;justify-content: center;}
+			.subscribe-left-content{flex: none;padding: 0 50px;}
+			.subscribe-title{font-size: 30px; color: #333; background: url('https://cc-west-usa.oss-us-west-1.aliyuncs.com/20210428/257380526831.png') no-repeat; background-position: 0 10px;}
+			.subscribe-form{margin-top: 10px; font-size: 14px; color: #333;}
+			.subscribe-form-item{margin-bottom: 20px; font-size: 14px;}
+			.subscribe-form-title span{color: #ff7700; margin-right: 4px;}
+      .subscribe-form-input{width: 100%; height: 38px; padding: 0 10px;border-radius: 4px; border: 1px solid rgba(0,0,0,0.15); margin-top: 5px; outline: none;  -webkit-appearance: none; font-size: 14px;}
+      .subscribe-form-input:focus {border: 1px solid rgba(0,0,0,0.15) !important;}
+			.subscribe-form-input::-webkit-input-placeholder {color: #999;}
+			.subscribe-form-input::-moz-placeholder{color: #999;}
+			.subscribe-form-input:-ms-input-placeholder{color: #999;}
+			.subscribe-form-input.error{border-color: #f34541;}
+			.subscribe-form-input.error::-webkit-input-placeholder {color: #f34541;}
+			.subscribe-form-input.error::-moz-placeholder{color: #f34541;}
+			.subscribe-form-input.error:-ms-input-placeholder{color: #f34541;}
+			.subscribe-btn-box{margin-top: 20px; display: flex; align-items: center; justify-content: space-between;}
+			.subscribe-btn{width: 100%; height: 40px; border-radius: 4px; background: #ff7700; color: #fff; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;}
+			.subscribe-btn:hover{background: #E56A00;}
+			.subscribe-skip-btn{color: #333; font-size: 14px; text-align: center; display: none; border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; height: 40px; box-sizing: border-box;}
+			.subscribe-buttom-img{width: 100%; display: none;}
+			#subscribe-close-btn{position: absolute; top: 20px; right: 20px; cursor: pointer;}
+      #subscribe-message{background: rgba(0,0,0,0.7); color: #fff; font-size: 13px; position: absolute; border-radius: 4px; padding: 6px 12px; max-width: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none}
+      .subscribe-whatsApp-box{height: 38px;border-radius: 4px; border: 1px solid rgba(0,0,0,0.15); margin-top: 5px;display: flex; align-items: center; color:#666; cursor: pointer; position: relative;}
+      .subscribe-whatsApp-box:hover{color: #f70}
+      .subscribe-whatsApp-left{display: flex;align-items: center;}
+      .subscribe-whatsApp-img-box{width: 30px; height: 40px; display: flex;align-items: center; justify-content: center;}
+      .subscribe-whatsApp-img{width: 16px;}
+      .subscribe-arrows-icon{width: 16px; height: 16px; background: url(${arrowsUrl}) no-repeat; background-size: cover;}
+      .subscribe-whatsApp-box:hover .subscribe-arrows-icon{background: url(${arrowsHoverUrl}) no-repeat; background-size: cover;}
+      #subscribe-whatsApp-right-icon{position: absolute; right: 5px;}
+      #subscribe-wechat-right-icon{position: absolute; right: 5px;}
+      // #subscribe-whatsApp-left-icon{transition: width 0.2s linear;
+      //   -moz-transition: width 0.2s linear; /* Firefox 4 */
+      //   -webkit-transition: width 0.2s linear; /* Safari 和 Chrome */
+      //   -o-transition: width 0.2s linear; /* Opera */}
+			@media screen and (max-width: 667px) {
+				#subscribe-box{width: 100%; height: 100%; border-radius: 0;}
+				#subscribe-right{display: none;}
+				.subscribe-item{width: 100%;}
+				#subscribe-left{justify-content: space-between}
+				.subscribe-left-content{padding: 16px 24px;}
+				.subscribe-title{background: none;font-size: ${0.614 * curRem}px; text-align: center; margin-top: ${curheight > 710 ? '30px' : '0'}}
+				.subscribe-form{margin-top: ${0.426 * curRem}px;}
+				.subscribe-form-item{margin-bottom: ${0.2667 * curRem}px;}
+				.subscribe-btn{width: 48%;}
+				.subscribe-btn:hover{background: #ff7700;}
+				.subscribe-skip-btn{display: flex; align-items: center; justify-content: center; width: 48%;}
+				.subscribe-buttom-img{display: block;}
+				#subscribe-close-btn{display: none;}
+				.subscribe-btn-box{margin-top: ${0.426 * curRem}px;}
+			}
+			@media screen and (max-width: 369px)  {
+				.subscribe-title{font-size: ${0.512 * curRem}px;}
+				.subscribe-form-input{height: 30px; font-size: 12px;}
+				.subscribe-btn{height: 30px;}
+        .subscribe-skip-btn{height: 30px;}
+        .subscribe-whatsApp-box{height: 30px;}
+        .subscribe-whatsApp-img-box{height: 30px}
+        .subscribe-form-item{font-size: 12px;}
+			}
+  </style>
+  <div id="subscribe-box">
+  <img id="subscribe-close-btn" src="https://cc-west-usa.oss-us-west-1.aliyuncs.com/2044/38220783610666.svg" alt="">
+  <div id="subscribe-left" class="subscribe-item">
+    <div class="subscribe-left-content">
+      <div class="subscribe-title">${translateText('chat-subscribe-subscribe-to-our-latest-niches')}</div>
+      <div class="subscribe-form">
+      <div class="subscribe-form-item">
+        <div class="subscribe-form-title">
+          <span>*</span>${translateText('chat-subscribe-your-name')}
+        </div>
+        <input id="subscribe-input-name" placeholder="${translateText('chat-subscribe-please-enter-your-name')}" type="text" class="subscribe-form-input">
+      </div>
+      <div class="subscribe-form-item">
+        <div class="subscribe-form-title">
+          ${translateText('chat-subscribe-whatsapp')}
+        </div>
+        <div class="subscribe-whatsApp-box" id="subscribe-whatsApp-box">
+          <div id="subscribe-whatsApp-left-icon-box" class="subscribe-whatsApp-img-box">
+            <img id="subscribe-whatsApp-left-icon" class="subscribe-whatsApp-img" src="https://cc-west-usa.oss-us-west-1.aliyuncs.com/a1f19520-c933-4d72-a3d3-cf688ba95b53.png" />
+          </div>
+          ${translateText('chat-subscribe-connect-with-cj-whatsapp')}
+          <div id="subscribe-whatsApp-right-icon" class="subscribe-arrows-icon"></div>
+        </div>
+      </div>
+      <div class="subscribe-form-item">
+        <div class="subscribe-form-title">
+          ${translateText('chat-subscribe-we-chat')}
+        </div>
+        <div class="subscribe-whatsApp-box" id="subscribe-wechat-box">
+          <div id="subscribe-wechat-left-icon-box" class="subscribe-whatsApp-img-box">
+            <img id="subscribe-wechat-left-icon" class="subscribe-whatsApp-img" src=${wechatIcon} />
+          </div>
+          ${translateText('chat-subscribe-connect-with-wechat-1')}
+          <div id="subscribe-wechat-right-icon" class="subscribe-arrows-icon"></div>
+        </div>
+      </div>
+      <div class="subscribe-form-item">
+        <div class="subscribe-form-title">
+          <span>*</span>${translateText('chat-subscribe-your-email')}
+        </div>
+        <input id="subscribe-input-email" placeholder="${translateText('chat-subscribe-please-enter-your-email')}" type="text" class="subscribe-form-input">
+      </div>
+    </div>
+    <div class="subscribe-btn-box">
+      <div id="subscribe-skip" class="subscribe-skip-btn">${translateText('chat-subscribe-skip')}</div>
+      <div id="subscribe-btn" class="subscribe-btn">${translateText('chat-subscribe-subscribe')}</div>
+    </div>
+    </div>
+    <img class="subscribe-buttom-img" src="https://cc-west-usa.oss-us-west-1.aliyuncs.com/20210430/2391272786525.png" alt="">
+  </div>
+  <div id="subscribe-right" class="subscribe-item">
+    <img style="width: 390px;" src="${bg}" alt="">
+  </div>
+  <div id="subscribe-message"></div>
+  </div>
+    `
+    document.body.appendChild(mask)
+    document.documentElement.style.overflow = 'hidden'
+    const reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+    const inputName = document.getElementById('subscribe-input-name') // name 输入框
+    const inputEmail = document.getElementById('subscribe-input-email') // email 输入框
+
+    if (emailText) inputEmail.value = emailText
+    inputName.oninput = (ev) => inputValueChange(ev.target.value, 'name', inputName)
+    inputEmail.oninput = ev => inputValueChange(ev.target.value, 'email', inputEmail)
+    // 启用whatsApp icon动画
+    animationByWhatsApp()
+
+    // 监听input变化
+    function inputValueChange(value, type, dom) {
+      if (!value) {
+        dom.classList.add("error")
+      } else if (type === 'email' && !reg.test(value)) {
+        dom.classList.add("error")
+      } else {
+        dom.classList.remove("error")
+      }
+    }
+    // 监听点击事件
+    mask.onclick = ev => {
+      const event = ev || window.event
+      const ele = event.srcElement || event.target
+      if (ele.id) {
+        switch (ele.id) {
+          case 'subscribe-btn':
+            submitFn()
+            break
+          case 'subscribe-close-btn':
+            closeYindao()
+            break;
+          case 'subscribe-skip':
+            closeYindao()
+            break;
+          case 'subscribe-whatsApp-box':
+            window.open('https://wa.me/8618067627100')
+            break;
+          case 'subscribe-whatsApp-left-icon-box':
+            window.open('https://wa.me/8618067627100')
+            break;
+          case 'subscribe-whatsApp-left-icon':
+            window.open('https://wa.me/8618067627100')
+            break;
+          case 'subscribe-whatsApp-right-icon':
+            window.open('https://wa.me/8618067627100')
+            break;
+          case 'subscribe-wechat-box':
+            toWechat();
+            break;
+          case 'subscribe-wechat-left-icon-box':
+            toWechat();
+            break;
+          case 'subscribe-wechat-left-icon':
+            toWechat();
+            break;
+          case 'subscribe-wechat-right-icon':
+            toWechat();
+            break;
+          default:
+            break
+        }
+      }
+    }
+    // 关闭
+    function closeYindao() { //关闭引导
+      addCookie('hasYindao', 1, Infinity, cookieDomain)
+      document.body.removeChild(mask)
+      document.documentElement.style.removeProperty('overflow')
+    }
+    // 提交
+    function submitFn() {
+      let isError = false
+      if (!inputName.value) {
+        inputName.classList.add('error')
+        isError = true
+      };
+      if (!inputEmail.value) {
+        inputEmail.classList.add('error')
+        isError = true
+      };
+      // if (!inputWhatsAPP.value) {
+      //   inputWhatsAPP.classList.add('error')
+      //   isError = true
+      // };
+      if (inputEmail.value && !reg.test(inputEmail.value)) {
+        inputEmail.classList.add('error')
+        isError = true
+      }
+      if (isError) return;
+      const params = {
+        name: inputName.value,
+        email: inputEmail.value,
+        userName: inputName.value,
+        whatsAppId: '',
+        chatType: domain,
+        uniqueCode: generateUUID(),
+      }
+      ajaxPostFun({
+        href: `${appUrl}${API.create}`,
+        sendData: params,
+        callback: ({ code, result }) => {
+          let messageInfo = 'System error';
+          if (+code === 201) {
+            messageInfo = 'You are registered, please log in for more hot-sell products'
+          } else if (+code === 200 || +code === 202) {
+            const { userName, token } = result
+            messageInfo = code === 200 ? 'Successful subscription' : 'You are already subscribed'
+            if (userName && token) {
+              addCookie('asj_temchatname', userName, Infinity, cookieDomain)
+              addCookie('asj_temchattoken', token, Infinity, cookieDomain)
+              const iframe = document.getElementById('fancybox-frame')
+              iframe && iframe.contentWindow.postMessage({ flag: "yindao", userName }, "*")
+              window.postMessage({ flag: "closeSubscribe", }, "*")
+            }
+          }
+          const messageEle = document.getElementById('subscribe-message');
+          if (messageEle) {
+            messageEle.innerHTML = messageInfo;
+            messageEle.style.display = 'block';
+            setTimeout(() => {
+              messageEle.style.display = 'none'
+              closeYindao()
+            }, 2000)
+          }
+
+        }
+      })
+    }
+    // whatsApp 动画
+    function animationByWhatsApp() {
+      const waDom = document.getElementById('subscribe-whatsApp-left-icon')
+      const wechatDom = document.getElementById('subscribe-wechat-left-icon')
+
+      interval && clearInterval(interval)
+      interval = setInterval(() => {
+        const waWidth = waDom.offsetWidth;
+        const wechatWidth = wechatDom.offsetWidth;
+        waDom.style.width = waWidth === 16 ? '14px' : '16px';
+        wechatDom.style.width = wechatWidth === 16 ? '14px' : '16px'
+      }, 600);
+    }
+  }
+
+  /** 公用 - 针对cj页面的i18next 进行翻译 */
+  function translateText(code) {
+    return languagePack[code] || defaultTranslate[code]
+  }
+
+  // 把临时客户姓名和token存入cookie
+  function addCookie(objName, objValue, objDays, domain) {
+    let d = new Date();
+    if (objDays !== Infinity) {
+      d.setTime(d.getTime() + (objDays * 24 * 60 * 60 * 1000));
+    }
+    let str = `${objName}=${escape(objValue)}; expires=${objDays === Infinity ? 'Fri, 31 Dec 9999 23:59:59 GMT' : d.toUTCString()}; domain=${domain};`
+    if (domain.includes('cjdropshipping') || domain.includes('cjdropship.com')) {
+      str += ' samesite=none; secure;'
+    }
+    document.cookie = str
+  }
+  // 根据cname 获取cookie
+  function getCookieFn(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1);
+      if (c.indexOf(name) !== -1) return c.substring(name.length, c.length);
+    }
+    return "";
+  }
+  //生成uuid
+  function generateUUID() {
+    let d = new Date().getTime()
+      , uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        let r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      })
+    return uuid;
+  }
+
+  // ajax post请求封装、
+  function ajaxPostFun({ href, token = "", sendData, callback }) {
+    let xhr = new XMLHttpRequest()
+    xhr.open('post', href, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("token", token || '');
+    xhr.onreadystatechange = function () {
+      if (+xhr.readyState === 4 && +xhr.status === 200) callback(JSON.parse(xhr.responseText))
+    }
+    xhr.send(JSON.stringify(sendData));
+  }
+
+  // ajax get请求
+  function ajaxGetFun({ href, callback }) {
+    let xhr = new XMLHttpRequest()
+    xhr.open('get', href);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+      if (+xhr.readyState === 4 && +xhr.status === 200) callback(JSON.parse(xhr.responseText))
+    }
+    xhr.send()
+  }
+
+  // window监听
+  window.addEventListener('message', function (e) {
+    const { flag } = e.data;
+    switch (flag) {
+      case 'openSubscribe': // 接收到postMessage 打开订阅
+        // 若是cj-blog 过来，则会有邮箱参数
+        const { email } = e.data
+        createSubscribe(email || '')
+        break;
+      default:
+        break
+    }
+  })
+}
