@@ -902,7 +902,21 @@ _array_structures:
               top-right-corner: 40%
               bottom-left-corner: 34%
               bottom-right-corner: 27%
-          content-block-link:  
+          content-block-link: 
+      - label: Image Carousel
+        icon: image
+        value:
+          _section-type: image-carousel
+          carousel:
+          - add-your-image: /images/jewelrey-images/pearls.jpg
+          - add-your-image: /images/jewelrey-images/shaza-bow.jpg
+          - add-your-image: /images/jewelrey-images/sun.jpeg
+          - add-your-image: /images/jewelrey-images/pearls.jpg
+          - add-your-image: /images/jewelrey-images/shaza-bow.jpg
+          - add-your-image: /images/jewelrey-images/pearls.jpg
+          - add-your-image: /images/jewelrey-images/sun.jpeg
+          - add-your-image: /images/jewelrey-images/pearls.jpg
+    content-block-link:  
       - label: Form
         icon: email
         value:
