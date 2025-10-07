@@ -1,5 +1,5 @@
 first-block:
-  image: /images/products/hotel-collabs/on-sale3.jpg
+  image: /images/jewelrey-images/shada-cancer-bow/shada-cancer-bow-earrings3.jpg
   textarea_html: <p><a href="/shop-categories/shop">SHOP</a></p>
   border-radius:
     border-top-left-corner: 100%
@@ -8,10 +8,10 @@ first-block:
     border-bottom-right-corner: 100%
   border-color: '#0a0a09'
 second-block:
-  image: /images/food-photography/camrea.png 
+  image: /images/jewelrey-images/palestine-map/palestine-map-necklace10.jpg
   textarea_html: >-
     <p><a href="/#about">ABOUT US</a></p>
-    <p><a href="/influencer-marketing">DONATE</a></p>
+    <p><a href="/shop-categories/save-lives">DONATE</a></p>
   border-radius:
     border-top-left-corner: 0%
     border-top-right-corner: 0%
@@ -19,9 +19,9 @@ second-block:
     border-bottom-right-corner: 0%
   border-color: '#0a0a09'
 third-block:
-  image: /images/services.webp
+  image: /images/jewelrey-images/home/aurora-sun-necklace.jpg
   textarea_html: >-
-    <p><a href="/#services">MOST LOVED</a></p>
+    <p><a href="/shop-categories/most-loved">MOST LOVED</a></p>
   border-radius:
     border-top-left-corner: 100%
     border-top-right-corner: 100%
@@ -29,7 +29,7 @@ third-block:
     border-bottom-right-corner: 0%
   border-color: '#0a0a09'
 fourth-block:
-  image: /images/contact-the-kings.webp
+  image:  /images/jewelrey-images/lola-large-teardrop/lola-large-teardrop-earrings3.jpg
   textarea_html: <p><a href="/#contact">CONTACT US</a></p>
   border-radius:
     border-top-left-corner: 0%

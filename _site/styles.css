@@ -134,7 +134,7 @@ font-family: 'Shrikhand', cursive;*/
   .padded-2 {  padding: 2rem;  }
   .padded-sides {padding: 0% 5% !important;}
   .padded-sides-s {padding: 0% 3% !important;}
-  .padded-right {padding-right: 5%;}
+  .padded-right {padding-right: 5% !important;}
   .padded-top-botton-left {padding: 5% 0% 5% 5%;}
   .padded-bottom {padding-bottom: 5%; }
   .padded-top {padding-top: 3% !important;}
@@ -310,9 +310,9 @@ font-family: 'Shrikhand', cursive;*/
 .purity img 
   {
   margin-left: 10rem;
-  max-width: 400px;
+  /* max-width: 400px; */
   height: auto;
-  padding: 10%;
+  /* padding: 10%; */
   }
 
  .purity-button a 
