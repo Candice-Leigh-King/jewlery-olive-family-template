@@ -137,6 +137,8 @@ font-family: 'Shrikhand', cursive;*/
   .padded-right {padding-right: 5% !important;}
   .padded-top-botton-left {padding: 5% 0% 5% 5%;}
   .padded-bottom {padding-bottom: 5%; }
+  .padded-bottom-s {padding-bottom: 3%; }
+  .padded-top-s {padding-top: 3%;}
   .padded-top {padding-top: 3% !important;}
   .padded-review {padding: 0% 15%;}
   .form-padded {padding: 3%}

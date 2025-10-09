@@ -7,10 +7,52 @@
     object-fit: cover;
     }  
 
+     #content-blocks-{{forloop.index0}} .margin {margin: 17px;}
+
+    #content-blocks-{{forloop.index0}} .save-the-date-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: black;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid black;
+    transition: all 0.3s ease;
+  }
+
+  #content-blocks-{{forloop.index0}} .save-the-date-btn:hover {
+    background-color: white;
+    color: black;
+  }
+
+    #content-blocks-{{forloop.index0}} h3 
+    {
+    color: {{item.colors.subheading-color}};
+    font-size: 3rem;
+    font-family: {{item.fonts.subheading-font}};
+    }
+    #content-blocks-{{forloop.index0}} h5 
+    {
+    color: {{item.colors.subheading-color}};
+    font-size: 2rem;
+    font-family: {{item.fonts.subheading-font}};
+    }
+
+    #content-blocks-{{forloop.index0}} p 
+    {
+    color: {{item.colors.text-color}};
+    font-size: 1rem;
+    font-family: {{item.fonts.text-font}};
+    }
+
 #content-blocks-{{forloop.index0}} .multiple-items img
     {
     border: black solid 1px;
     }
+
+#content-blocks-{{forloop.index0}} .background-color {background-color: {{item.colors.background-color}};}
 
         
 @media(max-width:768px) 
@@ -23,13 +65,17 @@
     }
 </style>
 <section id="content-blocks-{{forloop.index0}}" class="center">
-    <section id="{{item.content-block-link}}" class=" padded-s grid-center-middle">
-
-<section class="col-10 grid image-carousel">
+    <section id="{{item.content-block-link}}" class=" background-color padded-s grid-center-middle">
+<h3>{{item.heading}}</h3>
+<section class="col-12 grid image-carousel">
     <div class="col-12 text-center multiple-items">
         {% for carousel in item.carousel %}
       <img class="box-shadow multiple-items" src="{{carousel.add-your-image}}" alt="" />
       {% endfor %}
 </section>
+
+<div class="col-12 padded-bottom-s">{{item.textarea_html}}
+     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Main+Launch+Day&dates=20251016T050000Z/20251016T060000Z&details=Save+the+date+for+our+Main+Launch+Event.&location=Online" target="_blank" class="save-the-date-btn margin">SAVE THE DATE
+    </a>
     </section>
 </section>
