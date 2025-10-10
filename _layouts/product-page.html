@@ -2,37 +2,39 @@
 layout: default
 ---
 <head>
-  <script type="text/javascript">
-    // /<![CDATA[/
-    (function () {
-      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      if (window.ShopifyBuy) {
-        if (window.ShopifyBuy.UI) {
-          ShopifyBuyInit();
-        } else {
-          loadScript();
-        }
-      } else {
-        loadScript();
-      }
-      function loadScript() {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = scriptURL;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-        script.onload = ShopifyBuyInit;
-      }
-      function ShopifyBuyInit() {
-        var client = ShopifyBuy.buildClient({
-          domain: 'candyandtheking.myshopify.com',
-          storefrontAccessToken: 'cab3cab316e153c92c8cc9afe856b9fd',
-        });
-        ShopifyBuy.UI.onReady(client).then(function (ui) {
-          ui.createComponent('product', {
-            id: '{{page.shop-hero.product-id}}',
-            node: document.getElementById('product-component-{{page.shop-hero.product-number}}-{{page.shop-hero.product-component}}'),
-            moneyFormat: 'R%20%7B%7Bamount%7D%7D',
-            options: {
+  <div id='product-component-1760078042787'></div>
+<script type="text/javascript">
+// /<![CDATA[/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'z0dtgc-7v.myshopify.com',
+      storefrontAccessToken: 'ac4a6ff9027431f081c795700ae8e47e',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '{{page.shop-hero.product-id}}',
+        node: document.getElementById('product-component-{{page.shop-hero.product-number}}-{{page.shop-hero.product-component}}'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+
       "product": {
         "styles": {
           "product": {
@@ -165,7 +167,7 @@ layout: default
       }
     })();
     // /]]>/
-  </script>
+</script>
 </head>
 
 

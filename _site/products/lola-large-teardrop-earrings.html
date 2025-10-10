@@ -462,37 +462,39 @@
    
 
     <head>
-  <script type="text/javascript">
-    // /<![CDATA[/
-    (function () {
-      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      if (window.ShopifyBuy) {
-        if (window.ShopifyBuy.UI) {
-          ShopifyBuyInit();
-        } else {
-          loadScript();
-        }
-      } else {
-        loadScript();
-      }
-      function loadScript() {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = scriptURL;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-        script.onload = ShopifyBuyInit;
-      }
-      function ShopifyBuyInit() {
-        var client = ShopifyBuy.buildClient({
-          domain: 'candyandtheking.myshopify.com',
-          storefrontAccessToken: 'cab3cab316e153c92c8cc9afe856b9fd',
-        });
-        ShopifyBuy.UI.onReady(client).then(function (ui) {
-          ui.createComponent('product', {
-            id: '7605967814837',
-            node: document.getElementById('product-component-8-1704294183989'),
-            moneyFormat: 'R%20%7B%7Bamount%7D%7D',
-            options: {
+  <div id='product-component-1760078042787'></div>
+<script type="text/javascript">
+// /<![CDATA[/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'z0dtgc-7v.myshopify.com',
+      storefrontAccessToken: 'ac4a6ff9027431f081c795700ae8e47e',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '10097867653437',
+        node: document.getElementById('product-component-4-1760079320511'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+
       "product": {
         "styles": {
           "product": {
@@ -625,7 +627,7 @@
       }
     })();
     // /]]>/
-  </script>
+</script>
 </head>
 
 
@@ -748,7 +750,7 @@
   </section>
   <section class="shopify-button ">
     <div class="grid-center centered"> 
-      <div id='product-component-8-1704294183989'></div>
+      <div id='product-component-4-1760079320511'></div>
     </div>
   </section>  
 </section>
@@ -1038,7 +1040,7 @@
       <div class="accordion">
        <h4 class=""> I have another question...</h4>
       <div class="panel5">
-        <p>Send me your questions <a href="/contact"><u>here</u></a> and ask away!</p>
+        <p>Send me your questions <a href="/#contact"><u>here</u></a> and ask away!</p>
         </div>
       </div>
     </div>
