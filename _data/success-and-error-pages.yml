@@ -1,9 +1,9 @@
 colors:
   background-color: '#F8F7F3'
-  heading-color: '#9E9282'
-  text-color: '#2f3031'
-  link-color: '#9E9282'
+  heading-color: 'black'
+  text-color: 'black'
+  link-color: 'black'
   link-hover-color: '#366E94'
 fonts:
-  heading-font: Mak
-  text-font:  Raleway, sans-serif
+  heading-font: Playfair Display
+  text-font:  Playfair Display
