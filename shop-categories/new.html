@@ -1,0 +1,195 @@
+---
+layout: categories
+seo:
+ title: Shop - New
+ description: >- 
+  Our newest additiotn of timeless accents and modern finishes. From delicate studs to bold shapes, our newest pieces bring beauty and meaning to every look.
+ keywords: >- 
+   Dainty earrings, minimalist earrings, statement earrings, stud earrings, gold-plated earrings, silver earrings, layering earrings, everyday earrings, meaningful earrings, ethical fashion earrings
+ social-alt: >- 
+   New delicate and statement pieces from Zaytun, designed for everyday wear and to make a meaningful impact.
+ url: /
+ social-share_image: /images/jewelrey-images/shada-cancer-bow/shada-cancer-bow-earrings4.jpg
+heading: New
+category-1: 
+  heading: >- 
+    All
+  link: /shop-categories/shop
+category-6: 
+  heading: >- 
+    New
+  link: /shop-categories/new
+category-2: 
+  heading: Pieces that <i>save lives</i>
+  link: /shop-categories/save-lives
+category-3: 
+  heading: Most loved
+  link: /shop-categories/most-loved
+category-4: 
+  heading: Necklaces
+  link: /shop-categories/necklaces
+category-symbol: •
+category-5: 
+  heading: Earrings
+  link: /shop-categories/earrings
+colors:
+ heading-color: 'black'
+ product-title-color: 'black'
+ product-price-color: '#ae3d3d'
+ price-background-color: 'transparent'
+ discounted-price-color: 'transparent'
+ discounted-price-background-color: 'transparent'
+ product-description-color: 'black'
+ rating-color: '#f0be35'
+ cta-color: 'white'
+ shop-background-color: '#F8F7F3' 
+ product-hover-overlay-color: '#00000080' 
+ border-color: 'white'
+ product-description-background-color: 'white'
+ button-color: 'black'
+ button-text-color: 'white'
+ button-hover-color: 'white'
+ button-text-hover-color: 'black'
+ category-bar-color: 'black'
+ category-text-color: 'black'
+ category-text-hover-color: 'white'
+ category-text-background-hover-color: 'black'
+ category-dot-color: 'black'
+ page-nav-1-color: 'transparent'
+ page-nav-2-color: 'transparent'
+ page-nav-3-color: 'transparent'
+ page-nav-4-color: 'transparent'
+ page-nav-5-color: 'transparent'
+ page-nav-6-color: 'black'
+fonts:
+ heading-font: Playfair Display
+ product-title-font: Playfair Display
+ product-description-font: Roboto
+ cta-font: Playfair Display
+ button-font: Playfair Display
+ cta-font: Playfair Display
+ category-font: Playfair Display
+border-radius:
+  top-left: 0%
+  top-right: 0%
+  bottom-left: 0%
+  bottom-right: 0%
+---
+
+<style>
+
+  #content-blocks-{{forloop.index0}} h2 
+    {
+    color: {{page.colors.heading-color}};
+    font-family: {{page.fonts.heading-font}};
+    }
+
+  #content-blocks-{{forloop.index0}} .shop-background-color 
+    {background-color: {{page.colors.shop-background-color}};}
+
+  #content-blocks-{{forloop.index0}}  .blog-hover-overlay:hover 
+    {
+    background-color: {{page.colors.product-hover-overlay-color}};
+    color: {{page.colors.cta-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .shop-bump
+    {
+    border-top: 4px solid {{page.colors.border-color}};
+    border-left: 4px solid {{page.colors.border-color}};
+    background-color: {{page.colors.product-description-background-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .button-bump
+    {
+    border-left: 4px solid {{page.colors.border-color}};
+    background-color: {{page.colors.product-description-background-color}};
+    }
+  
+  #content-blocks-{{forloop.index0}} .all-products h3
+    {
+    font-family: {{page.fonts.product-title-font}};
+    color: {{page.colors.product-title-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .all-products h5
+    {
+    font-family: {{page.fonts.cta-font}};
+    }
+
+
+  #content-blocks-{{forloop.index0}} .all-products p
+  {
+  font-family: {{page.fonts.product-description-font}};
+  color: {{page.colors.product-description-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .stars p
+  {
+  color: {{page.colors.rating-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .stars a {text-align: centerS;}
+
+  #content-blocks-{{forloop.index0}} .product-price
+    {
+    background-color: {{page.colors.price-background-color}};
+    color: {{page.colors.product-price-color}}
+    }
+
+  #content-blocks-{{forloop.index0}} .compare-at-price
+   {
+   background-color: {{page.colors.discounted-price-background-color}};
+   color: {{page.colors.discounted-price-color}};
+   } 
+
+   #content-blocks-{{forloop.index0}} .button
+   {
+   background-color: {{page.colors.button-color}};
+   color: {{page.colors.button-text-color}};
+   font-family: {{page.fonts.button-font}};
+   border-top-left-radius: {{page.border-radius.top-left}};
+   border-top-right-radius: {{page.border-radius.top-left}};
+   border-bottom-left-radius: {{page.border-radius.top-left}};
+   border-bottom-right-radius: {{page.border-radius.top-left}};
+   padding: 10px 30px;
+   border: solid 2px {{page.colors.button-text-color}};
+   }
+
+   #content-blocks-{{forloop.index0}} .button:hover
+   {
+   background-color: {{page.colors.button-hover-color}};
+   color: {{page.colors.button-text-hover-color}};
+   border: solid 2px {{page.colors.button-text-hover-color}};
+</style>
+
+
+<section id="content-blocks-{{forloop.index0}}">
+    <section class="shop-background-color padded-sides grid-left all-products">
+        {% assign new_products = site.products | where: 'new_products', true %}
+        {% for shop in new_products %}
+        <div class="padded-1 col-4_sm-6_xs-12">
+          <a class="padded" href="{{shop.url}}">
+            <div class="hover-container" style="background-image:url('{{shop.shop-hero.product-image}}')">
+              <div class="blog-hover-overlay">
+                <div class="hover-inner center">
+                  <h5 class=""> {{shop.shop-hero.cta}} </h5>
+                </div>
+              </div>
+            </div>
+            <div class="shop-bump left grid">
+              <h3 class="col-12">{{shop.shop-hero.product-name}}</h3>
+              <p class="col-12"><span class="product-price"> {{shop.shop-hero.price}}</span> <span class="compare-at-price">{{shop.shop-hero.discounted-price}} </span></p>
+              <p class="col-12">{{shop.shop-hero.product-description-summery}}</p>
+              <div class="stars col-12">
+                <p>{{shop.shop-hero.product-rating}}</p>
+              </div>                     
+            </div>
+          </a>
+          <div class= "center button-bump">
+            <a href="{{shop.url}}" class="button center">{{shop.shop-hero.cta}}</a></div>
+        </div> 
+        {% endfor %}
+        </section>
+   </section> 
+</section>
