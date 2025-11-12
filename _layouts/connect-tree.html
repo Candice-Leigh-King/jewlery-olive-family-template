@@ -40,21 +40,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
-      <!--  Social media sharing META Tags -->
-      <meta property="og:title" content="{{page.seo.title}}" />
-      <meta property="og:description" content="{{page.seo.description}}" />
-      <meta property="og:image" content="{{ page.seo.social-share_image }}" />
-      <meta property="og:url" content="{{page.seo.url}}" />
-      <meta name="twitter:card" content="{{page.seo.description}}" />
-      <meta name="og:site_name" content="{{page.seo.title}}" />
+      <!-- Social media sharing META Tags -->
+      <meta property="og:title" content="{{ page.seo.title }}" />
+      <meta property="og:description" content="{{ page.seo.description }}" />
+      <meta property="og:image" content="https://zaytun.store{{ page.seo.social-share_image }}" />
+      <meta property="og:url" content="{{ page.seo.url }}" />
+      <meta property="og:site_name" content="Zaytun Jewelry" />
 
-      <!-- twitter card -->
-      <meta name="twitter:card" content="{{page.seo.description}}" />
-      <meta name="twitter:description" content="{{page.seo.description}}" />
-      <meta name="twitter:title" content="{{page.seo.title}}" />
-      <meta name="twitter:site" content="{{page.seo.url}}" />
-      <meta name="twitter:creator" content="{{page.seo.social-alt}}" />
-      <meta name="twitter:image:alt" content="{{ page.seo.social-share_image }}" />
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="{{ page.seo.title }}" />
+      <meta name="twitter:description" content="{{ page.seo.description }}" />
+      <meta name="twitter:image" content="https://zaytun.store{{ page.seo.social-share_image }}" />
+      <meta name="twitter:image:alt" content="{{ page.seo.title }}" />
 
       <!-- link to browser icon tag -->
       <link rel="icon" href="{{site.data.general.basics.browser-tag_image}}" type="image/x-icon" />
