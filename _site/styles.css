@@ -1816,4 +1816,29 @@ header
 
 
   } /* end media query */
+
+  @media (max-width: 425px) 
+  {
+    .icon-button 
+    {
+        margin-left: 140px;
+    }
+  }
+
+@media (max-width: 380px) 
+  {
+    .icon-button 
+    {
+        margin-left: 119px;
+    }
+  }
+
+@media (max-width: 325px) 
+{
+    .icon-button 
+    {
+        margin-left: 99px;
+    }
+}
+  
   
