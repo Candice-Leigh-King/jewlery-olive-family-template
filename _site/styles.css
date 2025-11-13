@@ -346,6 +346,7 @@ font-family: 'Shrikhand', cursive;*/
     background-size: cover;
     background-position: center;
     background-color: #EFEBE6;
+    border-radius: 15px;
     }
   
   .hover-container .hover-image 
@@ -354,6 +355,12 @@ font-family: 'Shrikhand', cursive;*/
     background-position: center;
     background-size: cover;
     }
+
+  .hover-container:hover 
+  {
+    box-shadow: 5px 7px 11px rgba(0, 0, 0, 0.5);
+    transition: transform 1s ease-in-out;
+  }
 
 
   .hover-container .hover-image:hover 
@@ -393,21 +400,21 @@ font-family: 'Shrikhand', cursive;*/
     background-color: rgba(133, 159, 159, 0.5);
     position: relative;
     }
-
+/* 
   .hover-overlay:hover 
     {
     background-color: #EFEBE6;
     color: white; 
-    }
+    } */
 
-  .hover-inner 
+  /* .hover-inner 
     {
     position: absolute;
     width: 100%;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    }
+    } */
 
 
   .hover-inner p {margin-bottom: 0;}
@@ -936,6 +943,7 @@ input[type=submit]
   padding: .8rem 2rem .6rem;
   }
 
+
 .button:hover {border: 1px solid #FDFAF0;}
 
 .button-solid:hover
@@ -983,11 +991,36 @@ input[type=submit]
  color: white;
  text-align: center;
  }
+ 
+
  .shop-button
  {
  position: fixed;
  z-index: 10;
  }
+
+.grow-on-hover {
+  transition: transform 0.3s ease-in-out; /* Smooth transition over 0.3 seconds */
+}
+
+.grow-on-hover:hover {
+  transform: scale(1.1); /* Scales the element to 110% of its original size */
+}
+
+ .icon-button
+  {
+  background-color: #b3ecb8;
+  padding: 6%;
+  border-radius: 100%;
+  border: solid 1px black;
+  margin-left: 235px;
+  }
+
+  .icon-bump 
+  {
+  margin-bottom: -5px;
+  margin-right: -1px;
+  }
 
  .floating-text-above-button
  {
@@ -1009,13 +1042,16 @@ input[type=submit]
 .all-products .product-price
 {font-size: 1.3rem;}
 
+.all-products p
+{margin-bottom: 0px;}
+
 .all-products h3 
 {
  font-size: 1.3rem;
  font-family: 'Montserrat', sans-serif;
  color: #2F3E39;
  text-shadow: none;
- margin: 0px 0px 10px
+ margin: 0px
 }
 
 .product-price 
@@ -1038,7 +1074,7 @@ font-size: 1.7rem;
 {
 margin-left: 1rem;
 margin-right: 1rem;
-margin-top: -3rem;
+margin-top: -67px;
 z-index: 3;
 position: relative;
 padding: 5%;
@@ -1199,15 +1235,15 @@ z-index: 1;
 .blog-hover-overlay
   {
   padding-bottom: 100%;
-  color: rgba(255,255,255,0);
+  /* color: rgba(255,255,255,0); */
   position: relative;
   transition: all .3s;
   }
 
 .blog-hover-overlay:hover 
   {
-  background-color: #6b8c9ea3;
-  color: white;
+  /* background-color: #6b8c9ea3; */
+  /* color: white; */
   }
 
 .bump
@@ -1356,7 +1392,8 @@ font-size: 1.3rem;
 font-family: 'Montserrat', sans-serif;
 color: #2F3E39;
 text-shadow: none;
-margin: 0px 0px 10px
+/* margin: 0px 0px 10px; */
+text-shadow: 1px 1px 5px rgb(0 0 0 / 63%);
 }
 
 .product-price 
@@ -1377,12 +1414,13 @@ font-size: 1.7rem;
 
 .shop-bump
 {
-margin-left: 1rem;
-margin-right: 1rem;
-margin-top: -3rem;
+margin-left: 1px;
+margin-right: 1px;
 z-index: 3;
 position: relative;
-padding: 5%;
+padding: 6px 0px 0px 2px;
+border-radius: 0px 0px 15px 15px;
+background-image: linear-gradient(to bottom, transparent, #000000c9);
 } 
 
 .stars p
@@ -1462,6 +1500,9 @@ z-index: 1;
   display: flex;
   flex-direction: column-reverse; 
   }
+
+  .icon-button {margin-left: 155px;}
+  .shop-bump {margin-top: -67px;}
 
    /* -----EXIBITION------ */
 a .exibition-gallery {display: block;}
@@ -1714,7 +1755,12 @@ header
 
  /* ----SHOP--- */
 
+ .shop-bump {margin-top: -54px;}
+ .icon-button {margin-left: 95px;}
+
   .shop-padded {padding-right: 0%;}
+
+  .hover-container {border: solid 1px;}
 
   .shop h1 {font-size: 2rem;} 
   .shop h2 {font-size: 1.9rem;}
@@ -1722,6 +1768,25 @@ header
   .shop h4 {font-size: 1.5rem;} 
   .shop h5 {font-size: 1.3rem;} 
   .shop h6 {font-size: 1.1rem;}
+
+  .all-products h3 
+    {
+    font-size: 1rem;
+    margin-bottom: 0px;
+    }
+
+  .all-products .product-price {font-size: 1rem;}
+  .all-products p {margin-bottom: 0px;}
+  .all-products .compare-at-price {font-size: 1rem;}
+
+  .product-price 
+  {
+  padding: 0px 5px;
+  border-radius: 0px 15px 15px 12px;
+  }
+
+  
+  .compare-at-price {padding: 0px 5px;}
   
   .right-image  
   {
