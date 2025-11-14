@@ -1825,11 +1825,27 @@ header
     }
   }
 
-@media (max-width: 380px) 
+  @media (max-width: 415px) 
+  {
+    .icon-button 
+    {
+        margin-left: 130px;
+    }
+  }
+
+@media (max-width: 385px) 
   {
     .icon-button 
     {
         margin-left: 119px;
+    }
+  }
+
+@media (max-width: 366px) 
+  {
+    .icon-button 
+    {
+        margin-left: 106px;
     }
   }
 
