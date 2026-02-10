@@ -113,6 +113,12 @@ layout: default
    border-radius: 100%;
   }
 
+  #content-blocks-{{forloop.index0}} .category-7
+  {
+   border: solid 1px {{page.colors.page-nav-7-color}};
+   border-radius: 100%;
+  }
+
   #content-blocks-{{forloop.index0}} .categories a:hover
    {
     background-color: {{page.colors.category-text-background-hover-color}};
@@ -240,6 +246,9 @@ layout: default
 
          <a class=" category-6" href="{{page.category-6.link}}"> {{page.category-6.heading}} </a> 
         <span class="dot">{{page.category-symbol}}</span>
+
+         <a class="category-7" href="{{page.category-7.link}}"> {{page.category-7.heading}} </a> 
+        <span class="dot">{{page.category-symbol}}</span>
  
         <a class=" category-2" href="{{page.category-2.link}}"> {{page.category-2.heading}} </a> 
         <span class="dot">{{page.category-symbol}}</span>
@@ -249,7 +258,9 @@ layout: default
       
         <a class="category-4" href="{{page.category-4.link}}"> {{page.category-4.heading}} </a> 
         <span class="dot">{{page.category-symbol}}</span>
+
         <a class="category-5" href="{{page.category-5.link}}"> {{page.category-5.heading}} </a> 
+
       </p>
      </div>
      </nav>

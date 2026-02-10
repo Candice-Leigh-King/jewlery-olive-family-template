@@ -211,8 +211,16 @@ font-family: 'Shrikhand', cursive;*/
     margin: 0;
     }
 
- h2, h3 {font-family: 'Shrikhand', cursive;}    
- h4, h5, h6 {font-family: 'Brushwell';}
+ h2, h3 
+  {
+  font-family: 'Playfair Display';
+  color: black;
+  }    
+ h4, h5, h6 
+ {
+  font-family: 'Playfair Display';
+  color: black;
+}
   
   h1 {
     color: #FDFAF0;
@@ -221,7 +229,7 @@ font-family: 'Shrikhand', cursive;*/
     margin: 0 !important;
     font-weight: 400;
     font-size: 3rem;
-    font-family: 'Shrikhand', cursive;
+    font-family: 'Playfair Display';
     }
   
   .fig-and-zuko h2 { font-size: 4rem;  }
@@ -292,7 +300,7 @@ font-family: 'Shrikhand', cursive;*/
   {color:#fff;} 
 
 .carousel-heading-font 
-  {font-family: 'Shrikhand', cursive;}  
+  {font-family: 'Playfair Display';}  
 
 .carousel-subheading-color 
   {color: #2f3031;}
@@ -307,7 +315,7 @@ font-family: 'Shrikhand', cursive;*/
   {color: #2f3031;}  
 
 .carousel-text-font 
-  {font-family: 'Poppins', sans-serif;}
+  {font-family: 'Playfair Display';}
 
 .carousel-symbols-color
  {
@@ -358,6 +366,24 @@ font-family: 'Shrikhand', cursive;*/
     font-family: 'Brushwell';
     font-size: 3rem;
   }  
+/* ---------VDAY-------- */
+  .valentine-hero {
+  width: 100vw;
+  height: 43vh; /* full screen */
+  background-image: url('/images/jewelrey-images/my-rori/v-day-bg-2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+}
 
   /*------------- HOVER GRID--------------- */
 

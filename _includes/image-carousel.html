@@ -53,7 +53,12 @@
     border: black solid 1px;
     }
 
-#content-blocks-{{forloop.index0}} .background-color {background-color: {{item.colors.background-color}};}
+#content-blocks-{{forloop.index0}} .background-color 
+{
+    background-color: {{item.colors.background-color}};
+    border: 10px solid {{item.colors.border-color}};
+    border-top: 0;
+}
 
         
 /* @media(max-width:768px) 
@@ -65,6 +70,8 @@
     
     } */
 </style>
+
+<!-- ----IMAGE CAROUSEL-- -->
 <section id="content-blocks-{{forloop.index0}}" class="center">
     <section id="{{item.content-block-link}}" class=" background-color padded-s grid-center-middle">
 <h3>{{item.heading}}</h3>
@@ -76,7 +83,8 @@
 </section>
 
 <div class="col-12 padded-bottom-s">{{item.textarea_html}}
-     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Main+Launch+Day&dates=20251101T050000Z/20251101T060000Z&details=Save+the+date+for+our+Main+Launch+Event.&location=Online" target="_blank"  class="save-the-date-btn margin">SAVE THE DATE
+     <a href="{{item.button.link}}" target="_blank"  class="save-the-date-btn margin">{{item.button.text}}
     </a>
-    </section>
+    
+</section>
 </section>

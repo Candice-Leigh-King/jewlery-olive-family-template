@@ -3,6 +3,7 @@
   {
   background-color: {{item.colors.background-color}};
   border: 10px solid {{item.colors.border-color}};
+  border-bottom: 0;
   }
 
 
@@ -191,8 +192,13 @@
 
     #content-blocks-{{forloop.index0}} .background-color 
     {
-    border: 3px solid {{item.colors.border-color}};
+    border: 10px solid {{item.colors.border-color}};
     }
+
+    #content-blocks-{{forloop.index0}} .cards .textarea 
+    {
+     margin-top: 0rem;
+     }
   }
 </style>
 
