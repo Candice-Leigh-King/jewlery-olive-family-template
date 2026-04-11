@@ -119,6 +119,13 @@ layout: default
    border-radius: 100%;
   }
 
+
+  #content-blocks-{{forloop.index0}} .category-8
+  {
+   border: solid 1px {{page.colors.page-nav-8-color}};
+   border-radius: 100%;
+  }
+
   #content-blocks-{{forloop.index0}} .categories a:hover
    {
     background-color: {{page.colors.category-text-background-hover-color}};
@@ -242,6 +249,9 @@ layout: default
     
      
         <a class=" category-1" href="{{page.category-1.link}}">{{page.category-1.heading}} </a> 
+        <span class="dot">{{page.category-symbol}}</span>
+
+        <a class=" category-8" href="{{page.category-8.link}}">{{page.category-8.heading}} </a> 
         <span class="dot">{{page.category-symbol}}</span>
 
          <a class=" category-6" href="{{page.category-6.link}}"> {{page.category-6.heading}} </a> 
