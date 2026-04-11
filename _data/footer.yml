@@ -16,10 +16,10 @@ navigation:
   right-textarea_html: >-
     <p><a href="/shop-categories/shop">SHOP </a></p>
     <p><a href="/shop-categories/most-loved"> MOST LOVED </a></p>
-    <p><a href="/#">DONATE</a></p>
+    <p><a href="/https://www.paypal.com/donate/?hosted_button_id=TUQ9EXYAZJAU6">DONATE</a></p>
   left-textarea_html: >-
     <p><a href="/#contact">CONTACT </a></p><p><a
-    href="/portfolio#reviews">REVIEWS </a></p>
+    href="#">REVIEWS </a></p>
 colors:
   background-color: 'black'
   social-icons-color: 'black'

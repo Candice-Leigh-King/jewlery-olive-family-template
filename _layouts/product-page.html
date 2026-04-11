@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
+
 <head>
-  <div id='product-component-1760078042787'></div>
+
 <script type="text/javascript">
 // /<![CDATA[/
 (function () {
@@ -34,7 +35,6 @@ layout: default
         node: document.getElementById('product-component-{{page.shop-hero.product-number}}-{{page.shop-hero.product-component}}'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: {
-
       "product": {
         "styles": {
           "product": {
@@ -46,21 +46,22 @@ layout: default
             "text-align": "center"
           },
           "button": {
-            "font-family": "{{page.shop-hero.fonts.buy-button-font}}",
-             "border": "2px solid {{page.shop-hero.colors.buy-button-border-color}}",
+            "font-family": "Roboto",
+             "border": "1px solid black",
+             "color": "black",
             ":hover": {
-              "background-color": "{{page.shop-hero.colors.buy-button-hover-color}}"
+              "background-color": "#dbffde"
             },
-            "background-color": "{{page.shop-hero.colors.buy-button-color}}",
+            "background-color": "#b3ecb8",
             ":focus": {
               "background-color": "{{page.shop-hero.colors.buy-button-hover-color}}"
             },
-            "border-radius": "{{page.shop-hero.border-radius.buy-button.top-left-corner}} {{page.shop-hero.border-radius.buy-button.top-right-corner}} {{page.shop-hero.border-radius.buy-button.bottom-right-corner}} {{page.shop-hero.border-radius.buy-button.bottom-left-corner}}",
+            "border-radius": "100px",
             "padding-left": "24px",
             "padding-right": "24px",
             "padding-bottom": "7px",
             "padding-top": "7px",
-            "font-size": "24px"
+            "font-size": "18px"
           }
         },
         "contents": {
@@ -124,15 +125,17 @@ layout: default
       "cart": {
         "styles": {
           "button": {
-            "font-family": "{{page.shop-hero.fonts.checkout-button-font}}",
+            "font-family": "Roboto",
+            "color": "black",
+            "border": "1px solid black",
             ":hover": {
-              "background-color": "{{page.shop-hero.colors.checkout-button-hover-color}}"
+              "background-color": "#7dc984"
             },
-            "background-color": "{{page.shop-hero.colors.checkout-button-color}}",
+            "background-color": "#b3ecb8",
             ":focus": {
-              "background-color": "{{page.shop-hero.colors.checkout-button-hover-color}}"
+              "background-color": "#7dc984"
             },
-            "border-radius": "{{page.shop-hero.border-radius.checkout-button.top-left-corner}} {{page.shop-hero.border-radius.checkout-button.top-right-corner}} {{page.shop-hero.border-radius.checkout-button.bottom-right-corner}} {{page.shop-hero.border-radius.checkout-button.bottom-left-corner}}",
+            "border-radius": "100px",
           }
         },
         "text": {
@@ -146,14 +149,14 @@ layout: default
       "toggle": {
         "styles": {
           "toggle": {
-            "font-family": "{{page.shop-hero.fonts.cart-button-font}}",
-            "border-radius": "{{page.shop-hero.border-radius.cart.top-left-corner}} {{page.shop-hero.border-radius.cart.top-right-corner}} {{page.shop-hero.border-radius.cart.bottom-right-corner}} {{page.shop-hero.border-radius.cart.bottom-left-corner}}",
-            "background-color": "{{page.shop-hero.colors.cart-button-color}}",
+            "font-family": "Roboto",
+            "border-radius": "100px",
+            "background-color": "#b3ecb8",
             ":hover": {
-              "background-color": "{{page.shop-hero.colors.cart-button-hover-color}}",
+              "background-color": "#7dc984",
             },
             ":focus": {
-              "background-color": "{{page.shop-hero.colors.cart-button-hover-color}}",
+              "background-color": "#7dc984",
             }
           }
         },
@@ -172,6 +175,7 @@ layout: default
 
 
   <style>
+  
    .product-background-color 
     {background-color: {{page.shop-hero.colors.background-color}};}
 
