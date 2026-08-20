@@ -1,0 +1,282 @@
+<style>
+
+  #content-blocks-{{forloop.index0}} h2 
+    {
+    color: {{item.colors.heading-color}};
+    font-family: {{item.fonts.heading-font}};
+    }
+
+  #content-blocks-{{forloop.index0}} h4
+   {
+    color: {{item.colors.subheading-color}};
+    font-family: {{item.fonts.subheading-font}};
+    }
+  
+
+  #content-blocks-{{forloop.index0}} .shop-background-color 
+    {
+        background-color: 
+        {{item.colors.shop-background-color}};
+        border: 10px solid {{item.colors.border-color}};
+        border-top: 0;
+    }
+
+  #content-blocks-{{forloop.index0}}  .blog-hover-overlay:hover 
+    {
+    /* background-color: {{item.colors.product-hover-overlay-color}}; */
+    color: {{item.colors.cta-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .shop-bump
+    {
+    border-top: 4px solid {{item.colors.border-color}};
+    border-left: 4px solid {{item.colors.border-color}};
+    background-color: {{item.colors.product-description-background-color}};
+    }
+  
+  #content-blocks-{{forloop.index0}} .all-products h3
+    {
+    font-family: {{item.fonts.product-title-font}};
+    color: {{item.colors.product-title-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .all-products h5
+    {
+    font-family: {{item.fonts.cta-font}};
+    }
+
+
+  #content-blocks-{{forloop.index0}} .all-products p
+  {
+  font-family: {{item.fonts.product-description-font}};
+  color: {{item.colors.product-description-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .stars p
+  {
+  color: {{item.colors.rating-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .product-price
+    {
+    background-color: {{item.colors.price-background-color}};
+    color: {{item.colors.product-price-color}}
+    }
+
+  #content-blocks-{{forloop.index0}} .compare-at-price
+   {
+   background-color: {{item.colors.discounted-price-background-color}};
+   color: {{item.colors.discounted-price-color}};
+   }
+
+  #content-blocks-{{forloop.index0}} .categories
+   {
+   border-top: 1px solid {{item.colors.category-bar-color}};
+   border-bottom: 1px solid {{item.colors.category-bar-color}};
+   color: {{item.colors.category-text-color}};
+   font-family: {{item.fonts.category-font}};
+   padding-top: 1%;
+   padding-bottom: 1%;
+   }
+
+   #content-blocks-{{forloop.index0}} .categories a
+    {
+    font-size: 1.5rem;
+    padding:0px 30px 0px 30px;
+    }
+
+  #content-blocks-{{forloop.index0}} .category-1
+  {
+   border: solid 1px {{item.colors.item-nav-1-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-2
+  {
+   border: solid 1px {{item.colors.item-nav-2-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-3
+  {
+   border: solid 1px {{item.colors.item-nav-3-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-4
+  {
+   border: solid 1px {{item.colors.item-nav-4-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-5
+  {
+   border: solid 1px {{item.colors.item-nav-5-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-6
+  {
+   border: solid 1px {{item.colors.item-nav-6-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .category-7
+  {
+   border: solid 1px {{item.colors.item-nav-7-color}};
+   border-radius: 100%;
+  }
+
+
+  #content-blocks-{{forloop.index0}} .category-8
+  {
+   border: solid 1px {{item.colors.item-nav-8-color}};
+   border-radius: 100%;
+  }
+
+  #content-blocks-{{forloop.index0}} .categories a:hover
+   {
+    background-color: {{item.colors.category-text-background-hover-color}};
+    color: {{item.colors.category-text-hover-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .dot
+  {
+  color: {{item.colors.category-dot-color}}
+  }
+
+  #content-blocks-{{forloop.index0}} h2 
+    {
+    color: {{item.colors.heading-color}};
+    font-family: {{item.fonts.heading-font}};
+    }
+
+  #content-blocks-{{forloop.index0}} .shop-background-color 
+    {background-color: {{item.colors.shop-background-color}};}
+
+  #content-blocks-{{forloop.index0}}  .blog-hover-overlay:hover 
+    {
+    /* background-color: {{item.colors.product-hover-overlay-color}}; */
+    color: {{item.colors.cta-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .shop-bump
+    {
+    border-top: 0px solid {{item.colors.border-color}};
+    border-left: 0px solid {{item.colors.border-color}};
+    background-color: {{item.colors.product-description-background-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .button-bump
+    {
+    border-left: 4px solid {{item.colors.border-color}};
+    background-color: {{item.colors.product-description-background-color}};
+    }
+  
+  #content-blocks-{{forloop.index0}} .all-products h3
+    {
+    font-family: {{item.fonts.product-title-font}};
+    color: {{item.colors.product-title-color}};
+    }
+
+  #content-blocks-{{forloop.index0}} .all-products h5
+    {
+    font-family: {{item.fonts.cta-font}};
+    }
+
+
+  #content-blocks-{{forloop.index0}} .all-products p
+  {
+  font-family: {{item.fonts.product-description-font}};
+  color: {{item.colors.product-description-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .stars p
+  {
+  color: {{item.colors.rating-color}};
+  }
+
+  #content-blocks-{{forloop.index0}} .stars a {text-align: centerS;}
+
+  #content-blocks-{{forloop.index0}} .product-price
+    {
+    background-color: {{item.colors.price-background-color}};
+    color: {{item.colors.product-price-color}};
+    border-radius: 0px 15px 15px 10px;
+    }
+
+  #content-blocks-{{forloop.index0}} .compare-at-price
+   {
+   background-color: {{item.colors.discounted-price-background-color}};
+   color: {{item.colors.discounted-price-color}};
+   } 
+
+   #content-blocks-{{forloop.index0}} .button
+   {
+   background-color: {{item.colors.button-color}};
+   color: {{item.colors.button-text-color}};
+   font-family: {{item.fonts.button-font}};
+   border-top-left-radius: {{item.border-radius.top-left}};
+   border-top-right-radius: {{item.border-radius.top-left}};
+   border-bottom-left-radius: {{item.border-radius.top-left}};
+   border-bottom-right-radius: {{item.border-radius.top-left}};
+   padding: 10px 30px;
+   border: solid 2px {{item.colors.button-text-color}};
+   }
+
+   #content-blocks-{{forloop.index0}} .button:hover
+   {
+   background-color: {{item.colors.button-hover-color}};
+   color: {{item.colors.button-text-hover-color}};
+   border: solid 2px {{item.colors.button-text-hover-color}};
+   }
+
+   @media(max-width:576px) 
+   {
+
+   #content-blocks-{{forloop.index0}} .shop-bump 
+    {
+    border-top: 0px;
+    border-left: 0px;
+    }
+
+    }
+
+</style>
+<section id="content-blocks-{{forloop.index0}}">
+    <section class="shop-background-color padded-sides grid-left all-products">
+        <div class=" col-12">{{item.textarea_html}}</div>
+        {% assign recommended_products = site.products | where: 'recommended_products', true %}
+        {% for shop in recommended_products %}
+         <div class="padded-1 col-3_md-4_xs-6">
+          <a class="padded" href="{{shop.url}}">
+            <div class="hover-container" style="background-image:url('{{shop.shop-hero.product-image}}')">
+              <span class="icon-button right">
+                  <svg class="icon-bump" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke-width="1.5"><path fill="#b7b8b9" d="M2 21.203L3.84 9.239h14.725l1.84 11.964z"/><path fill="#fff" d="m14.18 9.547l.94-3.376l3.476.443L22 11.738l-4.416 2.933z"/><path stroke="#000" d="m14.18 9.547l.94-3.376l3.476.442L22 11.737l-4.416 2.934z"/><path stroke="#000" d="M14.334 9.24H3.841L2 21.202h18.406l-1.159-7.53M6.602 9.239v-1.84a4.601 4.601 0 0 1 9.056-1.158"/></g></svg>
+                </span>
+              <div class="blog-hover-overlay">
+                <div class="hover-inner center">
+                  <!-- <h5 class=""> {{shop.shop-hero.cta}} </h5> -->
+                </div>
+              </div>
+            </div>
+            <div class="shop-bump left grid">
+              <h3 class="col-12 ">{{shop.shop-hero.product-name}}</h3>
+              <p class="col-12">
+                <span class="product-price"> {{shop.shop-hero.price}}</span> 
+                <span class="compare-at-price">{{shop.shop-hero.discounted-price}} </span>
+              </p>
+              <!-- <p class="col-12 mob-hide">{{shop.shop-hero.product-description-summery}}</p> -->
+              <div class="stars col-12">
+                <p>{{shop.shop-hero.product-rating}}</p>
+              </div>                     
+            </div>
+          </a>
+          <!-- <div class= "center button-bump mob-hide">
+            <a href="{{shop.url}}" class="button center ">{{shop.shop-hero.cta}}</a>
+          </div> -->
+        </div> 
+        {% endfor %}
+        </section>
+   </section> 
+</section>
