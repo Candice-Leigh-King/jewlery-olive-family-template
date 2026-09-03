@@ -195,7 +195,7 @@
  
  <section id="content-block-{{forloop.index0}}"> 
    <section id="{{item.content-block-link}}" class="padded grid-center-middle form-background-color banner" style="background-image: url('{{item.background_image}}');">
-     <form method="post" action="/success" class="enquiry col-12 grid-center capped-width">
+     <form name="contact" method="POST" data-netlify="true" action="/success" class="enquiry col-12 grid-center capped-width">
        <div class=" form-border-color center textarea-background-color col-9_sm-12 padded radius-quarter" >
          <div class="grid-center-middle">
  
@@ -207,7 +207,7 @@
            </div>
  
            <div class="floating-input ">
-             <input type="text" name="{{item.form-input.text-option-2}}" placeholder="{{item.form-input.text-option-2}}" class="input-text form-text-color" required="" />
+             <input type="email" name="email" placeholder="Email address" class="input-text form-text-color" required />
              <label class="input-label">{{item.form-input.text-option-2}}</label>
            </div>
            
