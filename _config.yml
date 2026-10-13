@@ -1011,3 +1011,6 @@ _select_data:
       #   short word describing the section it is leading to. For example- about.
       #   If you don't want this section to link from the navigation, you can
       #   simply leave it out.
+exclude:
+  - netlify.toml
+  - README.md
